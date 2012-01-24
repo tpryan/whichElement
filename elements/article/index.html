@@ -1,25 +1,64 @@
 <!DOCTYPE html> 
 <html> 
 	<head> 
-	<title>Article - whichElement</title> 
-</head> 
-<body> 
-	<header>
-		<hgroup>
-			<h1>whichElement?</h1>
-			<h2>Trying to answer that age old question: Is that a div, a span, or something else.</h2>
-		</hgroup>
-	</header>
-	<section>
-		<article>
-			<header>
-				<h1>Article</h1>
-				<h2>A standalone piece of content</h2>
-			</header>
+		<title>whichElement</title>
+		<link rel="stylesheet" href="/css/main.css" />
+		<script type="text/javascript" src="http://use.typekit.com/div2vlq.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+		 
+	</head> 
+	<body> 
+		<header>
+			<hgroup>
+				<h1><a href="/">whichElement?</a></h1>
+				<h2>Trying to answer that age old question:<br /> 
+					<em>Is that a div, a span, or something else.</em></h2>
+			</hgroup>
+		</header>
+		<div id="content">
+			<article>
+				<header>
+					<h1><code>&lt;article&gt;</code></h1>
+					<p>A standalone piece of content</p>
+				</header>
+				<h2>Overview</h2>
+				<aside>If you are using the words "entry," "post,"
+					or obviously "article" to refer to the content in other places, <code>&lt;article&gt;</code> is for you.</aside>
+				<p>An <code>&lt;article&gt;</code> is meant to denote any pice of content that could stand on it's own.  The 
+					most perfect example of this is a blog post.  A blog post although part of a larger site
+					is a single consumable chunk, and does not require any of the rest of the content on the site
+					to be something that one would be interested in. If you are using the words "entry," "post,"
+					or obviously "article" to refer to the content in other places, <code>&lt;article&gt;</code> is for you. </p>
+					
+				<p>However you are not restricted to those uses.  "Standalone" can mean a fair number of things.  For example
+					are comments appropriate for <code>&lt;article&gt;</code>?  At first glace no, but if you allow direct 
+					linking to them via anchors, then it can be reasoned that you could count a comment as standalone
+					and therefore appropriate to deal with as an <code>&lt;article&gt;</code>.   </p>	
+				
+				<h2>Conflicting or Confusing Elements</h2>
+				<h3><code>&lt;div&gt;</code></h3>
+				<p>Anything that can be referred to by <code>&lt;article&gt;</code> 
+					can work as a <code>&lt;div&gt;</code>. In this case <code>&lt;div&gt;</code> is less specific 
+					then <code>&lt;article&gt;</code>. </p>
+				<h3><code>&lt;section&gt;</code></h3>
+				<p>These two tags were both added in <acronym>HTML5</acronym>. </p>
+				
+				<h2>Further Reading</h2>
+				<ul>
+					<li><a href="http://html5doctor.com/the-article-element/">HTML5 Doctor -> The article element</a></li>
+					<li><a href="http://oli.jp/2009/html5-structure1/">Oli.jp -> HTML5 structure - div, section &amp; article</a></li>
+					<li><a href="http://diveintohtml5.info/semantics.html#article-element">Dive Into HMTL5 -> Semantics - > Article</a></li>
+				</ul>
+				
+			</article>
+		</div>
+		<footer>
+			<p><a href="/">whichElement</a> is a group effort. We welcome input from whoever wants to pitch in.  Currently contributors include:</p>
 			
-			
-		</article>
-	</section>
-	<footer></footer>
-</body>
+			<ul>
+				<li><a href="">Terry Ryan</a></li>
+				<li><a href="">Ray Camden</a></li>
+			</ul>
+		</footer>
+	</body>
 </html>
