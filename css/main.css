@@ -1,0 +1,26 @@
+html{
+	background-color: #000;
+}
+
+body{
+	font-family: "news-gothic-std";
+	max-width: 800px;
+	margin: 0 auto;
+	background-color: #FFF;
+}
+
+body header, body footer, body #content{
+	padding: 10px 20px;
+}
+
+
+h1, h2, h3{
+	font-family: "chunk";
+	font-weight: normal;
+}
+
+
+header, footer{
+	background-color: #000;
+	color: #FFF;
+}
