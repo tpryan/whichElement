@@ -1,3 +1,15 @@
 whichElement is an attempt to have a single resource to answer the question: "Which element should I use."
 
 We welcome community participation. Feel free to get in the game.
+
+WEBFONTS
+We use Typekit to deliver webfonts to the site.  Typekit fonts are ties to the domain of the hosting server.  
+Currently we support the following domains:
+
+* whichElement.dev
+* whichElement.com
+* 127.0.0.1
+* localhost
+
+To server up pages with proper webfonts setup your development environment to support one of those hosts, or request 
+additional host support. 
