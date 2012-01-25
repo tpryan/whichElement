@@ -21,6 +21,8 @@
 		<echo message="Testing ant in this environment. " />
 		<echo message="basedir:     ${basedir}" />
 		<echo message="ant.version: ${ant.version}" />
+		<echo message="stage.dir:   ${stage.dir}" />
+		<echo message="build.dir:   ${build.dir}" />
 	</target>
 	
 	
