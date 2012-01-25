@@ -1,5 +1,22 @@
 html{
 	background-color: #292E33;
+	
+background-image: linear-gradient(left , rgb(41,46,51) 0%, rgb(102,102,102) 50%, rgb(41,46,51) 100%);
+background-image: -o-linear-gradient(left , rgb(41,46,51) 0%, rgb(102,102,102) 50%, rgb(41,46,51) 100%);
+background-image: -moz-linear-gradient(left , rgb(41,46,51) 0%, rgb(102,102,102) 50%, rgb(41,46,51) 100%);
+background-image: -webkit-linear-gradient(left , rgb(41,46,51) 0%, rgb(102,102,102) 50%, rgb(41,46,51) 100%);
+background-image: -ms-linear-gradient(left , rgb(41,46,51) 0%, rgb(102,102,102) 50%, rgb(41,46,51) 100%);
+
+background-image: -webkit-gradient(
+	linear,
+	left top,
+	right top,
+	color-stop(0, rgb(41,46,51)),
+	color-stop(0.5, rgb(102,102,102)),
+	color-stop(1, rgb(41,46,51))
+);
+	
+	
 }
 
 body{
