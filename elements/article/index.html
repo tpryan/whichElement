@@ -2,10 +2,10 @@
 <html> 
 	<head> 
 		<title>whichElement</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
 		<link rel="stylesheet" href="/css/main.css" />
 		<script type="text/javascript" src="http://use.typekit.com/div2vlq.js"></script>
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-		 
 	</head> 
 	<body> 
 		<header>
@@ -13,13 +13,14 @@
 				<h1><a href="/">whichElement?</a></h1>
 				<h2>Trying to answer that age old question:<br /> 
 					<em>Should that be a div, a span, or something else.</em></h2>
+				<div id="forkme"><a href="http://github.com/tpryan/whichelement">Fork me on GitHub</a></div>
 			</hgroup>
 		</header>
 		<div id="content">
 			<article>
 				<header>
 					<h1><code>&lt;article&gt;</code></h1>
-					<p>A standalone piece of content</p>
+					<p>An article represents as stand-alone piece of content.</p>
 				</header>
 				<h2>Overview</h2>
 				<aside>If you are using the words "entry," "post,"
@@ -41,10 +42,13 @@
 					can work as a <code>&lt;div&gt;</code>. In this case <code>&lt;div&gt;</code> is less specific 
 					then <code>&lt;article&gt;</code>. </p>
 				<h3><code>&lt;section&gt;</code></h3>
-				<p>These two tags were both added in <acronym>HTML5</acronym>. </p>
+				<p>These two tags were both added in <abbr title="Hypertext Markup Langauge 5">HTML5</acronym>. 
+					That timing alone has seemingly caused some confusion. The important thing to note here: a <code>&lt;section&gt;</code>
+					refers to groups of related pieces of content, where an <code>&lt;article&gt;</code> refers to a a single piece of 
+					stand-alone content. So if the content is solitary, chose <code>&lt;article&gt;</code> over <code>&lt;section&gt;</code>.   </p>
 				
 				<h2>Further Reading</h2>
-				<ul>
+				<ul class="optionlist">
 					<li><a href="http://html5doctor.com/the-article-element/">HTML5 Doctor -> The article element</a></li>
 					<li><a href="http://oli.jp/2009/html5-structure1/">Oli.jp -> HTML5 structure - div, section &amp; article</a></li>
 					<li><a href="http://diveintohtml5.info/semantics.html#article-element">Dive Into HMTL5 -> Semantics - > Article</a></li>

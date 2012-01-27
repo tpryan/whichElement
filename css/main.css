@@ -278,6 +278,11 @@ article aside{
 	);
 }
 
+abbr{
+	cursor: help;
+	letter-spacing: 2px;
+}
+
 @media (min-width:640px) {
 	h1{
 	font-size: 50px;
@@ -285,6 +290,10 @@ article aside{
 	
 	h2{
 		font-size: 28px;
+	}
+	
+	 h3{
+		font-size: 20px;
 	}
 	p, li{
 		font-size: 20px;
