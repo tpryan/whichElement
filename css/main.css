@@ -153,3 +153,70 @@ article aside{
 	box-shadow: 5px 5px 5px #888;
 	
 }
+
+		#forkme{
+			height: 149px;
+			width: 149px;
+			overflow:hidden;
+			padding: 0;
+			margin: 0;
+			float: right;
+			position:absolute;
+			top: 0;
+			right: 0;
+		}
+		
+		#forkme a{
+			border: none;
+			display: block;
+			width: 190px;
+			font-size: 14px;
+			font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", 
+				"Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, 
+				Geneva, "Helvetica Neue", Helvetica, Arial, sans serif;
+			background-color: #333;
+			color: #E89343;
+			word-spacing: 2px;
+			text-decoration: none;
+			padding: 5px 15px 5px 25px;
+			
+			position:relative;
+			left: 20px;
+			top: -37px;
+			text-align: center;
+			
+			-moz-transform-origin: 0 0 ;
+			-moz-transform:rotate(45deg);
+			-moz-box-shadow:    1px 1px 5px 1px #111;
+			
+			-webkit-transform-origin: 0 0 ;	
+			-webkit-transform:rotate(45deg);
+			-webkit-box-shadow: 1px 1px 5px 1px #111;
+			
+			-ms-transform-origin: 0 0 ;	
+			-ms-transform:rotate(45deg);
+			-ms-box-shadow: 1px 1px 5px 1px #111;
+			
+			transform-origin: 0 0 ;	
+			transform:rotate(45deg);
+			box-shadow: 1px 1px 5px 1px #111;
+			
+			background-image: linear-gradient(bottom, #382C2C 3%, #E89343 5%, #382C2C 7%, #382C2C 93%, #E89343 95%, #382C2C 97%);
+			background-image: -o-linear-gradient(bottom, #382C2C 3%, #E89343 5%, #382C2C 7%, #382C2C 93%, #E89343 95%, #382C2C 97%);
+			background-image: -moz-linear-gradient(bottom, #382C2C 3%, #E89343 5%, #382C2C 7%, #382C2C 93%, #E89343 95%, #382C2C 97%);
+			background-image: -webkit-linear-gradient(bottom, #382C2C 3%, #E89343 5%, #382C2C 7%, #382C2C 93%, #E89343 95%, #382C2C 97%);
+			background-image: -ms-linear-gradient(bottom, #382C2C 3%, #E89343 5%, #382C2C 7%, #382C2C 93%, #E89343 95%, #000382C2C000 97%);
+			
+			background-image: -webkit-gradient(
+				linear,
+				left bottom,
+				left top,
+				color-stop(0.03, #382C2C),
+				color-stop(0.05, #E89343),
+				color-stop(0.07, #382C2C),
+				color-stop(0.93, #382C2C),
+				color-stop(0.95, #E89343),
+				color-stop(0.97, #382C2C)
+			);	
+			
+		}
