@@ -19,6 +19,7 @@ background-image: -webkit-gradient(
 	
 }
 
+
 body{
 	font-family: "freight-sans-pro";
 	max-width: 800px;
@@ -60,12 +61,16 @@ body footer a:hover{color: #FFFFFF;	border-bottom: 1px solid #CCCCCC; }
 body footer a:active{color: #FFFFFF;	border-bottom: 1px solid #CCCCCC}
 
 p{
-	font-size: 20px;
+	
 	line-height: 1.5;
 }
 
 header h1, header h2{
 	text-shadow: #000 2px 2px 3px;
+}
+
+header h2{
+	margin-right: 30px;
 }
 
 h1, h2, h3{
@@ -74,13 +79,6 @@ h1, h2, h3{
 	color: #E89343;
 }
 
-h1{
-	font-size: 50px;
-}
-
-h2{
-	font-size: 28px;
-}
 
 header, footer{
 	background-color: #382C2C;
@@ -154,69 +152,141 @@ article aside{
 	
 }
 
-		#forkme{
-			height: 149px;
-			width: 149px;
-			overflow:hidden;
-			padding: 0;
-			margin: 0;
-			float: right;
-			position:absolute;
-			top: 0;
-			right: 0;
-		}
+#forkme{
+	height: 149px;
+	width: 149px;
+	overflow:hidden;
+	padding: 0;
+	margin: 0;
+	float: right;
+	position:absolute;
+	top: 0;
+	right: 0;
+}
+
+#forkme a{
+	border: none;
+	display: block;
+	width: 190px;
+	font-size: 14px;
+	font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", 
+		"Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, 
+		Geneva, "Helvetica Neue", Helvetica, Arial, sans serif;
+	background-color: #333;
+	color: #E89343;
+	word-spacing: 2px;
+	text-decoration: none;
+	padding: 5px 15px 5px 25px;
+	
+	position:relative;
+	left: 20px;
+	top: -37px;
+	text-align: center;
+	
+	-moz-transform-origin: 0 0 ;
+	-moz-transform:rotate(45deg);
+	-moz-box-shadow:    1px 1px 5px 1px #111;
+	
+	-webkit-transform-origin: 0 0 ;	
+	-webkit-transform:rotate(45deg);
+	-webkit-box-shadow: 1px 1px 5px 1px #111;
+	
+	-ms-transform-origin: 0 0 ;	
+	-ms-transform:rotate(45deg);
+	-ms-box-shadow: 1px 1px 5px 1px #111;
+	
+	transform-origin: 0 0 ;	
+	transform:rotate(45deg);
+	box-shadow: 1px 1px 5px 1px #111;
+	
+	background-image: linear-gradient(bottom, #382C2C 3%, #E89343 5%, #382C2C 7%, #382C2C 93%, #E89343 95%, #382C2C 97%);
+	background-image: -o-linear-gradient(bottom, #382C2C 3%, #E89343 5%, #382C2C 7%, #382C2C 93%, #E89343 95%, #382C2C 97%);
+	background-image: -moz-linear-gradient(bottom, #382C2C 3%, #E89343 5%, #382C2C 7%, #382C2C 93%, #E89343 95%, #382C2C 97%);
+	background-image: -webkit-linear-gradient(bottom, #382C2C 3%, #E89343 5%, #382C2C 7%, #382C2C 93%, #E89343 95%, #382C2C 97%);
+	background-image: -ms-linear-gradient(bottom, #382C2C 3%, #E89343 5%, #382C2C 7%, #382C2C 93%, #E89343 95%, #000382C2C000 97%);
+	
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.03, #382C2C),
+		color-stop(0.05, #E89343),
+		color-stop(0.07, #382C2C),
+		color-stop(0.93, #382C2C),
+		color-stop(0.95, #E89343),
+		color-stop(0.97, #382C2C)
+	);	
+			
+}
+
+.optionlist{
+	list-style: none;
+	padding-left: 0;
+}
+
+.optionlist li{
+	margin-bottom: 5px;
+	
+	
+}
+
+.optionlist li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: none;
+	padding: 5px 0 5px 10px;
+	
+	border: 1px solid #E89343;
+	
+	-moz-border-radius: 5px;  
+	-webkit-border-radius: 5px;  
+	border-radius: 5px; 
+	
+	background-image: linear-gradient(bottom, #D9D2D9 23%, #F5F5F5 73%);
+	background-image: -o-linear-gradient(bottom, #D9D2D9 23%, #F5F5F5 73%);
+	background-image: -moz-linear-gradient(bottom, #D9D2D9 23%, #F5F5F5 73%);
+	background-image: -webkit-linear-gradient(bottom, #D9D2D9 23%, #F5F5F5 73%);
+	background-image: -ms-linear-gradient(bottom, #D9D2D9 23%, #F5F5F5 73%);
+	
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.23, #D9D2D9),
+		color-stop(0.73, #F5F5F5)
+	);
 		
-		#forkme a{
-			border: none;
-			display: block;
-			width: 190px;
-			font-size: 14px;
-			font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", 
-				"Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, 
-				Geneva, "Helvetica Neue", Helvetica, Arial, sans serif;
-			background-color: #333;
-			color: #E89343;
-			word-spacing: 2px;
-			text-decoration: none;
-			padding: 5px 15px 5px 25px;
-			
-			position:relative;
-			left: 20px;
-			top: -37px;
-			text-align: center;
-			
-			-moz-transform-origin: 0 0 ;
-			-moz-transform:rotate(45deg);
-			-moz-box-shadow:    1px 1px 5px 1px #111;
-			
-			-webkit-transform-origin: 0 0 ;	
-			-webkit-transform:rotate(45deg);
-			-webkit-box-shadow: 1px 1px 5px 1px #111;
-			
-			-ms-transform-origin: 0 0 ;	
-			-ms-transform:rotate(45deg);
-			-ms-box-shadow: 1px 1px 5px 1px #111;
-			
-			transform-origin: 0 0 ;	
-			transform:rotate(45deg);
-			box-shadow: 1px 1px 5px 1px #111;
-			
-			background-image: linear-gradient(bottom, #382C2C 3%, #E89343 5%, #382C2C 7%, #382C2C 93%, #E89343 95%, #382C2C 97%);
-			background-image: -o-linear-gradient(bottom, #382C2C 3%, #E89343 5%, #382C2C 7%, #382C2C 93%, #E89343 95%, #382C2C 97%);
-			background-image: -moz-linear-gradient(bottom, #382C2C 3%, #E89343 5%, #382C2C 7%, #382C2C 93%, #E89343 95%, #382C2C 97%);
-			background-image: -webkit-linear-gradient(bottom, #382C2C 3%, #E89343 5%, #382C2C 7%, #382C2C 93%, #E89343 95%, #382C2C 97%);
-			background-image: -ms-linear-gradient(bottom, #382C2C 3%, #E89343 5%, #382C2C 7%, #382C2C 93%, #E89343 95%, #000382C2C000 97%);
-			
-			background-image: -webkit-gradient(
-				linear,
-				left bottom,
-				left top,
-				color-stop(0.03, #382C2C),
-				color-stop(0.05, #E89343),
-				color-stop(0.07, #382C2C),
-				color-stop(0.93, #382C2C),
-				color-stop(0.95, #E89343),
-				color-stop(0.97, #382C2C)
-			);	
-			
-		}
+	
+	
+}
+
+.optionlist li a:hover{
+	color: #FFF;
+	background-image: linear-gradient(bottom, #E89343 23%, #FCD6B3 73%);
+	background-image: -o-linear-gradient(bottom, #E89343 23%, #FCD6B3 73%);
+	background-image: -moz-linear-gradient(bottom, #E89343 23%, #FCD6B3 73%);
+	background-image: -webkit-linear-gradient(bottom, #E89343 23%, #FCD6B3 73%);
+	background-image: -ms-linear-gradient(bottom, #E89343 23%, #FCD6B3 73%);
+	
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.23, #E89343),
+		color-stop(0.73, #FCD6B3)
+	);
+}
+
+@media (min-width:640px) {
+	h1{
+	font-size: 50px;
+	}
+	
+	h2{
+		font-size: 28px;
+	}
+	p, li{
+		font-size: 20px;
+	}
+}
