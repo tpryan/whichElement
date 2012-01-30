@@ -27,12 +27,20 @@ body{
 	background-color: #FFF;
 	border-left: 5px solid #E89343;
 	border-right: 5px solid #E89343;
-	border-bottom: 10px solid #E89343;
 }
 
-footer, #content{
+#content{
+	padding: 0;
+}
+
+article{
 	padding: 10px 20px;
 }
+
+footer{
+	padding: 10px 20px;
+}
+
 
 header {
 	padding-top: 10px;
@@ -81,9 +89,6 @@ header h1, header h2{
 	text-shadow: #000 2px 2px 3px;
 }
 
-header h2{
-	margin-right: 30px;
-}
 
 h1, h2, h3{
 	font-family: "chunk";
@@ -118,17 +123,14 @@ article header, article footer{
 article h1{
 	font-size: 40px;
 	margin: 0;
+	text-shadow: #aaa 1px 1px 1px;
 	
 }
 
 article h2{
 	font-size: 25px;
-	text-shadow: none;
 }
 
-article h3{
-	text-shadow: none;
-}
 
 article aside{
 	font-family: "chunk";
@@ -330,6 +332,16 @@ nav  a:active{ color: #E89343; border: none;}
 nav  li:first-child{text-align: left;}
 nav  li:last-child{text-align: right;}
 
+
+#breadcrumbs{
+	margin: 0;
+	padding: 0 20px  5px 20px;
+	background-color: #E89343;
+}
+
+#breadcrumbs .divider{
+	padding: 0 20px;
+}
 
 @media (min-width:640px) {
 	h1{
