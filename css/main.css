@@ -29,11 +29,22 @@ body{
 	border-right: 5px solid #E89343;
 }
 
-body header, body footer, body #content{
+footer, #content{
 	padding: 10px 20px;
 }
 
-body header h1 a{
+header {
+	padding-top: 10px;
+}
+
+header h1{
+	margin: 10px 20px;
+}
+header h2{
+	margin: 10px 60px 20px 20px;
+}
+
+header h1 a{
 	text-decoration: none;
 	color: #E89343;
 }
@@ -50,15 +61,15 @@ body header h1 a{
 	color: #E89343;
 }
 
-body header h1 a:link{color: #E89343; 	border-bottom: none; }
-body header h1 a:visited{color: #E89343; 	border-bottom: none; }
-body header h1 a:hover{color: #FFFFFF; 	border-bottom: none; }
-body header h1 a:active{color: #FFFFFF; 	border-bottom: none; }
+header h1 a:link{color: #E89343; 	border-bottom: none; }
+header h1 a:visited{color: #E89343; 	border-bottom: none; }
+header h1 a:hover{color: #FFFFFF; 	border-bottom: none; }
+header h1 a:active{color: #FFFFFF; 	border-bottom: none; }
 
-body footer a:link{color: #DDDDDD; 	border-bottom: 1px dotted #FFFFFF; }
-body footer a:visited{color: #BBBBBB; border-bottom: 1px dotted #DDDDDD; }
-body footer a:hover{color: #FFFFFF;	border-bottom: 1px solid #CCCCCC; }
-body footer a:active{color: #FFFFFF;	border-bottom: 1px solid #CCCCCC}
+footer a:link{color: #DDDDDD; 	border-bottom: 1px dotted #FFFFFF; }
+footer a:visited{color: #BBBBBB; border-bottom: 1px dotted #DDDDDD; }
+footer a:hover{color: #FFFFFF;	border-bottom: 1px solid #CCCCCC; }
+footer a:active{color: #FFFFFF;	border-bottom: 1px solid #CCCCCC}
 
 p{
 	
@@ -222,6 +233,7 @@ article aside{
 .optionlist{
 	list-style: none;
 	padding-left: 0;
+	margin-right: 15px;
 }
 
 .optionlist li{
@@ -261,6 +273,7 @@ article aside{
 	
 }
 
+
 .optionlist li a:hover{
 	color: #FFF;
 	background-image: linear-gradient(bottom, #E89343 23%, #FCD6B3 73%);
@@ -281,7 +294,37 @@ article aside{
 abbr{
 	cursor: help;
 	letter-spacing: 2px;
+	font-variant: small-caps;
 }
+
+nav ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	border-top: 3px solid #E89343;
+	border-bottom: 3px solid #E89343;
+	background-color: #887777;
+	display: table;
+	width: 100%;
+
+}
+
+nav ul li{
+	display: table-cell;
+	font-family: "chunk";
+	padding: 15px 20px 10px 20px;
+	text-align: center;
+	width: 100px;
+}
+
+nav  a:link{ color: #FFFFFF; border: none;}
+nav  a:visited{ color: #FFFFFF; border: none;}
+nav  a:hover{ color: #E89343; border: none;}
+nav  a:active{ color: #E89343; border: none;}
+
+nav  li:first-child{text-align: left;}
+nav  li:last-child{text-align: right;}
+
 
 @media (min-width:640px) {
 	h1{
@@ -299,3 +342,4 @@ abbr{
 		font-size: 20px;
 	}
 }
+
