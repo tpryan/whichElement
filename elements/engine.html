@@ -25,6 +25,7 @@
 					url:"/elements/tags/"+tag+".html",
 					success:function(res,code) {
 						$("#mainArticle").html(res);
+						resizeFooter();
 					},
 					error:function(err) {
 						//assume 404 and load in badtag.html, it better exist...
