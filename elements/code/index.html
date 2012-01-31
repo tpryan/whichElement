@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html> 
 	<head> 
-		<title>&lt;q&gt; - Elements - whichElement</title>
+		<title>&lt;code&gt; - Elements - whichElement</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
 		<link rel="stylesheet" href="/css/main.css" />
@@ -34,34 +34,34 @@
 			</div>
 			<article>
 				<header>
-					<h1><code>&lt;q&gt;</code></h1>
-					<p>A q is a short, in-line  quotation.</p>
+					<h1><code>&lt;code&gt;</code></h1>
+					<p>A code block is used to display computer code.</p>
 				</header>
 				<h2>Overview</h2>
-				<aside><q>Use q correctly or
-					don't use it at all,</q> I always say.</aside>
-				<p>A <code>&lt;q&gt;</code> is meant to be used to provide a short quote within some other content. The idea 
-					is to convey that it is a quote but not break out of the existing paragraph.  <q>Use q correctly or
-					don't use it at all,</q> I always say.   </p>
+				
+					<aside>If you are not just talking about code but actually <i>showing</i> code, then use the code tag.</aside>
+				
+				<p>
+				A <code>&lt;code&gt;</code> block is used to wrap blocks of computer code. Examples of HTML or other languages should be wrapped in code tags.
+				Note that the act of wrapping code with code blocks will only change the appearance of the text. It will not escape HTML entities such as &lt; or &gt;
+				or add line breaks.
+				</p>
 					
 				
 				
 				<h2>Conflicting or Confusing Elements</h2>
-				<h3><code><a href="../blockquote">&lt;blockquote&gt;</a></code></h3>
-				<p>So both <code>&lt;q&gt;</code> and <code>&lt;blockquote&gt;</code> denote quotes.  The difference is that
-					a <code>&lt;blockquote&gt;</code> is meant to do two things:</p>
-					<ol>
-						<li>Contain an extended quote</li>
-						<li>Put a break in the content.</li>
-					</ol>
-					
+				<h3><code><a href="../pre">&lt;pre&gt;</a></code></h3>
 				
+				<p>
+					Many people make use of the &lt;pre&gt; block to wrap code since it handles line breaks automatically. Also the font
+				used to render &lt;pre&gt; blocks looks a bit like computer code as well. But &lt;pre&gt; is meant for preformatted text
+				and does not convey the same meaning as a block of code.
+				</p>
+
 				
 				<h2>Further Reading</h2>
 				<ul class="optionlist">
-					<li><a href="http://www.amityadav.name/blockquote-vs-q-vs-cite/">Amit Yadav -> Blockquote vs. Q vs. Cite</a></li>
-					<li><a href="http://www.smashingmagazine.com/2008/06/12/block-quotes-and-pull-quotes-examples-and-good-practices/">Smashing Magazine -&gt; Block Quotes and Pull Quotes: Examples and Good Practices</a></li>
-					<li><a href="http://stackoverflow.com/questions/2205159/correct-use-of-blockquote-q-and-cite">stackoverflow -&gt; Correct use of Blockquote, q and cite?</a></li>
+					<li><a href="http://www.nealgrosskopf.com/tech/thread.php?pid=33">NealGrosskopf.com | Styling HTML Code Blocks Using Only CSS & CSS Counters</a></li>
 				</ul>
 				
 			</article>
