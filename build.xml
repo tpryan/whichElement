@@ -2,7 +2,7 @@
 <project default="test.ant" name="whichElement.com" basedir=".">
 	<property file="build.properties"/>
 	
-	<target name="build" depends="clean,copyfiles,notify" />
+	<target name="build" depends="test.ant,clean,copyfiles,notify" />
 	
 	<target name="clean">
 		<echo message="Cleaning Build Space"/>
