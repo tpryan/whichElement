@@ -1,0 +1,50 @@
+<header>
+	<h1>Comment</h1>
+	<p>An audience provided response to a piece of content on the web. </p>
+</header>
+
+<aside>This entry refers to an indivdual comment on a blog.  For the list  that 
+	contains this item see <q><a href="/concepts/comments">comments</a></q></aside>
+
+<h2>Overview</h2>
+<p>When we refer to comments, typically requires 2 things:</p>
+<ol>
+	<li>A response to the main content</li>
+	<li>An identifier for the author of the response.</li>
+</ol>
+<p>Then there are optional pieces of content:</p> 
+<ul>
+	<li>A website for the author of the response. </li>
+	<li>Timestamp for the response.</li>
+</ul>
+
+<h2>Candidates</h2>
+<ul>
+	<li><a href="/elements/article"><code>&lt;article&gt;</code></a></li>
+	<li><a href="/elements/div"><code>&lt;div&gt;</code></a></li>
+	<li><a href="/elements/p"><code>&lt;p&gt;</code></a></li>
+	<li><a href="/elements/span"><code>&lt;span&gt;</code></a></li>
+</ul>
+
+<p>Right off the bat, I think we can nix the <code>&lt;p&gt;</code>. 
+	The <code>&lt;p&gt;</code> should not contain other block-elements which 
+	precludes it from containing the members of a comment. Which makes you 
+	have to use a lot of custom CSS to get the tags you can use in a <code>&lt;p&gt;</code>
+	layout the appropriate way for a comment. </p>
+<p>Much the same way, this precludes the <code>&lt;span&gt;</code> as it cannot contain 
+	block-elements either, which makes for a lot of CSS hoop jumping. </p>
+<p>Up until recently, the <code>&lt;div&gt;</code> would be your goto tag for a comment. As 
+	it can contain block-level elements, can be styled without too much drama, and is
+	specifically for holding information that isn't semantically designated any other way.
+	It's a good choice. </p>
+<p>The <code>&lt;article&gt;</code> is also a great candidate. But, it denotes standalone content. 
+	At first glace this would seem to preclude using it. However, comments are often 
+	deep linked.  This makes it seem like there is value in directly going to a comment 
+	and bypassing the original content. In this case, the comment can be looked upon as standalone
+	and deserving of an <code>&lt;article&gt;</code>.</p>
+	
+<h2>Verdict</h2>
+<p><strong>We recomend the <code>&lt;article&gt;</code>.</strong>
+	The <code>&lt;div&gt;</code> can also work, but the <code>&lt;article&gt;</code> is the better 
+	semantic choice.</p>		
+				
