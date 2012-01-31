@@ -1,0 +1,42 @@
+<header>
+	<h1>Comments</h1>
+	<p>A list of audience provided responses to a piece of content.</p>
+</header>
+
+
+<aside>This entry refers a list of comments on a blog.  
+	For individual comments that make up this list see 
+<q><a href="/concepts/comment">comment</a></q></aside>
+
+<h2>Overview</h2>
+<p>Comments are basically just big lists of individual comments. </p>
+
+<h2>Candidates</h2>
+<ul>
+	<li><a href="/elements/div"><code>&lt;div&gt;</code></a></li>
+	<li><a href="/elements/ul"><code>&lt;dl&gt;</code></a></li>
+	<li><a href="/elements/ol"><code>&lt;ol&gt;</code></a></li>
+	<li><a href="/elements/section"><code>&lt;section&gt;</code></a></li>
+	<li><a href="/elements/ul"><code>&lt;ul&gt;</code></a></li>
+</ul>
+
+<p>At first glace, one of the lists makes a good candidate. This is a big honkin' list 
+	of comments.  Semantically, the <code>&lt;ol&gt;</code> makes a strong showing
+	as comments are usally listed in chronilogical order, and therefore haivng the numbers
+	part of the display of the items is pretty good. However it's hard to style the <code>&lt;ol&gt;</code> 
+	numbers independent of the text.  It can be done, but involves adding more elements to the content.
+	The <code>&lt;ul&gt;</code> is a better choice here, you can just turn off the bullets and style away.
+	The <code>&lt;dl&gt;</code> might be semantically correct, but seems like you're just showing off your 
+	use of obscure elements.  Not that there is anything wrong with that.  
+</p>
+<p>You could go with a <code>&lt;div&gt;</code>.  The w3c discourages using a <code>&lt;div&gt;</code> when there is a
+	more specific element to use, and in this case you have several. </p>
+<p>A <code>&lt;section&gt;</code> refers to a group of related bits of content. A list of comments in a blog 
+	definately fit the bill.</p>
+	
+	
+<h2>Verdict</h2>
+<p><strong>We recomend the <code>&lt;section&gt;</code>.</strong>
+	The <code>&lt;ul&gt;</code> is a good backup. However a <code>&lt;ul&gt;</code>
+	requires a bit of extra CSS editing, that's unnecessary if you start with the plainer <code>&lt;section&gt;</code>.
+</p>		
