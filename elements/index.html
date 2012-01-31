@@ -22,7 +22,7 @@
 				window.document.title = tag + " "+window.document.title;
 				$("#tagcrumb").text(tag);
 				$.ajax({
-					url:"/elements/tags/"+tag+"/index.html",
+					url:"/elements/tags/"+tag+".html",
 					success:function(res,code) {
 						$("#mainArticle").html(res);
 					},
