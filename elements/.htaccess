@@ -1,6 +1,7 @@
 RewriteEngine On
 
-
+RewriteCond %{HTTP_USER_AGENT} ^Googlebot.*
+RewriteRule ^(.*)$	/elements/tags/$1.html [L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
