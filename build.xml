@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="test.ant" name="whichElement.com" basedir=".">
 	<property file="build.properties"/>
+	<record name="build.log" action="start" />
 	
-	<target name="build" depends="test.ant,clean,copyfiles,notify" />
+	<target name="build" depends="test.ant,copyfiles,notify" />
 	
 	<target name="clean">
 		<echo message="Cleaning Build Space"/>
@@ -13,12 +14,13 @@
 	
 	<target name="copyfiles">
 		<echo message="Copying Files to Build Location"/>
-		<copy todir="${build.dir}" preservelastmodified="true" verbose="true">
+		<copy todir="${build.dir}" preservelastmodified="true" verbose="true" >
 			<fileset dir="${stage.dir}">
 				<exclude name='.gitignore'/>
 				<exclude name='.git/**'/>
 				<exclude name='build.properties'/>
 				<exclude name='build.xml'/>
+				<exclude name='build.log'/>
 				<exclude name='.project'/>
 				<exclude name='README'/>
 				<exclude name='templates/**'/>
@@ -35,14 +37,20 @@
 	</target>
 	
 	<target name="notify">
+		<loadfile property="message" srcfile="build.log" />
+
 		<mail mailhost="${mail.host}" 
 			subject="Update build" 
 			from="${mail.username}@${mail.host}" 
 			tolist="admins@${mail.host}" 
 			user="${mail.username}@${mail.host}" 
 			password="${mail.password}">
-		  <message>An update has been posted to whichElement.com</message>
+		  <message>An update has been posted to whichElement.com
+		  	${message}
+		  </message>
 		</mail>
+		
+		
 	</target>
 	
 	
