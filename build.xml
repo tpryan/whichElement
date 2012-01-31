@@ -2,7 +2,16 @@
 <project default="test.ant" name="whichElement.com" basedir=".">
 	<property file="build.properties"/>
 	
-	<target name="build" description="Create a gitless version of the source code.">
+	<target name="build" depends="clean,copyfiles,notify" />
+	
+	<target name="clean">
+		<echo message="Cleaning Build Space"/>
+		<delete includeemptydirs="true">
+			<fileset dir="${build.dir}" includes="**/*" />
+		</delete>
+	</target>
+	
+	<target name="copyfiles">
 		<echo message="Copying Files to Build Location"/>
 		<copy todir="${build.dir}" preservelastmodified="true" verbose="true">
 			<fileset dir="${stage.dir}">
@@ -12,17 +21,28 @@
 				<exclude name='build.xml'/>
 				<exclude name='.project'/>
 				<exclude name='README'/>
+				<exclude name='templates/**'/>
 			</fileset>	
 		</copy>
-		
 	</target>
 	
-	<target name="test.ant" description="Exports the script of the database ">
+	<target name="test.ant">
 		<echo message="Testing ant in this environment. " />
 		<echo message="basedir:     ${basedir}" />
 		<echo message="ant.version: ${ant.version}" />
 		<echo message="stage.dir:   ${stage.dir}" />
 		<echo message="build.dir:   ${build.dir}" />
+	</target>
+	
+	<target name="notify">
+		<mail mailhost="${mail.host}" 
+			subject="Update build" 
+			from="${mail.username}@${mail.host}" 
+			tolist="admins@${mail.host}" 
+			user="${mail.username}@${mail.host}" 
+			password="${mail.password}">
+		  <message>An update has been posted to whichElement.com</message>
+		</mail>
 	</target>
 	
 	
