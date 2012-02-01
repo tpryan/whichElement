@@ -248,7 +248,7 @@ article aside{
 	
 }
 
-.optionlist li a{
+.optionlist li a, .calltoaction a{
 	display: block;
 	width: 100%;
 	height: 100%;
@@ -279,8 +279,12 @@ article aside{
 	
 }
 
+.calltoaction {
+	margin-right: 15px;
+	margin-bottom: 25px;
+}
 
-.optionlist li a:hover{
+.optionlist li a:hover, .calltoaction a:hover{
 	color: #FFF;
 	background-image: linear-gradient(bottom, #E89343 23%, #FCD6B3 73%);
 	background-image: -o-linear-gradient(bottom, #E89343 23%, #FCD6B3 73%);
