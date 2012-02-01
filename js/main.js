@@ -1,5 +1,11 @@
 $(document).ready(function() {
-			 resizeFooter();
+	var filter = window.location.href.indexOf("/elements/") + window.location.href.indexOf("/concepts/") + window.location.href.indexOf("/definitions/")
+	if(filter < 0 ){
+		resizeFooter();
+	} 
+	
+
+
 });
 
 $(window).resize(function() {
@@ -7,7 +13,8 @@ $(window).resize(function() {
 });
 
 function resizeFooter(){
-	var neededHeight = $(window).height() -($("footer").offset().top ) + 7;
-	if(neededHeight < 50) neededHeight=50;
+	var origheight = $("footer").height();
+	var neededHeight = $(window).height() -($("footer").offset().top );
+	if(neededHeight < origheight) neededHeight=origheight;
 	$("footer").height(neededHeight);
 }
