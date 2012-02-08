@@ -22,14 +22,14 @@
 				window.document.title = tag + " "+window.document.title;
 				$("#tagcrumb").text(tag);
 				$.ajax({
-					url:"/elements/tags/"+tag+".html",
+					url:"/elements/tags/"+tag+"/index.html",
 					success:function(res,code) {
 						$("#mainArticle").html(res);
 						resizeFooter();
 					},
 					error:function(err) {
 						//assume 404 and load in badtag.html, it better exist...
-						$("#mainArticle").load("/elements/tags/badtag.html");
+						$("#mainArticle").load("/elements/tags/badtag/index.html");
 						$("#tagcrumb").text("unobtainium");
 					}
 
