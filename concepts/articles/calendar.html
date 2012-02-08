@@ -1,1 +1,37 @@
-<h2>Calendar</h2>
+<header>
+	<h1>Calendar</h1>
+	<p>A list of dates, orgainized chronilogically. </p>
+</header>
+
+
+
+<h2>Overview</h2>
+
+
+<h2>Candidates</h2>
+<ul>
+	<li><a href="/elements/table"><code>&lt;table&gt;</code></a></li>
+	<li><a href="/elements/div">Multiple <code>&lt;div&gt;</code></a>'s </li>
+	<li><a href="/elements/ul"><code>&lt;ul&gt;</code></a> + <a href="/elements/li"><code>&lt;li&gt;</code></a></li>
+	
+</ul>
+
+<p>The <code>&lt;table&gt;</code> is a good starting spot.  When we think of calendars, we think of a traditional grid of dates. 
+And that is semantically just fine. Doing a calendar as a <code>&lt;table&gt;</code> should be viewed as acceptable. Therefore
+the idea of building a <code>&lt;table&gt;</code>-like construct out of <code>&lt;div&gt;</code>'s should be viewed as needless
+work and semantically more vague. </p>
+
+<p>On the other hand, semantically, a list could be viewed as also semtantically correct for this data.  This becomes more
+true if you want to skip dates, or linearlize the display. In fact, often on mobile devices you do want to display this 
+content differently, omitting extraneous data, and .  It's a little easier to layout a list like a table, then it is to 
+layout a table like a list. </p>
+	
+<h2>Verdict</h2>
+<p><strong>We recomend the <code>&lt;ul&gt;</code></a> + <code>&lt;li&gt;</code>.</strong>
+	The <code>&lt;table&gt;</code> is also correct, and perhaps more semantically correct. However when it comes 
+	to coding and displaying, lists are easier, and sematically good enough.  </p>
+<h2>Further Reading</h2>
+<ul class="optionlist">
+	<li><a href="http://mondaybynoon.com/20060724/calendar-semantics-table-or-list/">Monday by Noon/ -> Calendar Semantics: Table or List</a></li>
+	<li><a href="http://forum.boagworld.com/discussion/6566/html-calendar-table-or-ordered-list">Boagworld -> HTML Calendar - Table or ordered list?</a></li>
+</ul>			
