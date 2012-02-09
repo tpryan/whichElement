@@ -1,0 +1,2 @@
+#just prevent parent from working here
+RewriteEngine Off
