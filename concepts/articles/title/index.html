@@ -1,0 +1,55 @@
+<header>
+	<h1>Title</h1>
+	<p>The title of a book, movie, poem or some other content. </p>
+</header>
+
+
+
+
+<h2>Overview</h2>
+<p>When you make a reference to the work of another person, regardless of form, it is customary to call out that reference. 
+In the print world this was done by italicizing, wrapping in quotes, or underlining. </p>
+
+<h2>Candidates</h2>
+<ul>
+	
+	<li><a href="/elements/cite"><code>&lt;cite&gt;</code></a></li>
+	<li><a href="/elements/em"><code>&lt;em&gt;</code></a></li>
+	<li><a href="/elements/q"><code>&lt;q&gt;</code></a></li>
+
+</ul>
+
+<p>Both the <code>&lt;em&gt;</code> and the  <code>&lt;q&gt;</code> elements are concerned with the display aspect of a
+title, and not the semantic qualities. Neither one are sematically correct, it's not a quote, and it's not being
+emphaisized.  Therefore both of these are poor choices.</p>
+
+<p>However, the cite tag is actually very appropriate.  As you are citing some other work. However, this does
+cause people to argue over the semantics of <q>cite</q>. Is just a passing reference worthy of a <code>&lt;cite&gt;</code>?
+To quote the <abbr>w3c</abbr>:</p>
+
+<blockquote><p>The cite element represents the title of a work (e.g. a book, a paper, an essay, a poem, a score, a song, a script, 
+a film, a TV show, a game, a sculpture, a painting, a theatre production, a play, an opera, a musical, an exhibition, 
+a legal case report, etc). This can be a work that is being quoted or referenced in detail (i.e. a citation), or it can just 
+be a work that is mentioned in passing.</p>
+<p>
+	<cite><a href="http://dev.w3.org/html5/spec/Overview.html#the-cite-element">w3c -> The Cite Element</a></cite>
+</p>
+</blockquote>
+
+<p>To paraphrase them - <q>Yes!</q> 
+	
+	
+<h2>Verdict</h2>
+<p><strong>We recomend the <code>&lt;cite&gt;</code> element.</strong>
+	This one was pretty easy.  This is one of the most clearly defined usage in the <abbr>w3c</abbr>. 
+</p>	
+
+<h2>Further Reading</h2>
+<ul class="optionlist">
+	<li><a href="http://dev.w3.org/html5/spec/Overview.html#the-cite-element">w3c -> The Cite Element</a></li>
+	<li><a href="http://www.apvschicago.com/2011/04/titles-quote-marks-italics-underlining.html">AP vs. Chicago -> Titles: Quote Marks, Italics, Underlining, or Naked?</a></li>
+	<li><a href="http://html5doctor.com/blockquote-q-cite/">HTML5 Doctor -> Quoting and citing with <code><span class="tag">&lt;blockquote&gt;</span></code>, <code><span class="tag">&lt;q&gt;</span></code>, <code><span class="tag">&lt;cite&gt;</span></code>, and the cite attribute </a></li>
+</ul>
+
+
+	
