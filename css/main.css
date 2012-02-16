@@ -171,6 +171,39 @@ article aside{
 	
 }
 
+blockquote{
+
+	border: 1px solid #E89343;
+	-moz-border-radius: 5px;  
+	-webkit-border-radius: 5px;  
+	border-radius: 5px; 
+	padding: 10px;
+
+	background-image: linear-gradient(bottom, #E3E3E3 42%, #F0F0F0 71%, #FAF7FA 86%);
+	background-image: -o-linear-gradient(bottom, #E3E3E3 42%, #F0F0F0 71%, #FAF7FA 86%);
+	background-image: -moz-linear-gradient(bottom, #E3E3E3 42%, #F0F0F0 71%, #FAF7FA 86%);
+	background-image: -webkit-linear-gradient(bottom, #E3E3E3 42%, #F0F0F0 71%, #FAF7FA 86%);
+	background-image: -ms-linear-gradient(bottom, #E3E3E3 42%, #F0F0F0 71%, #FAF7FA 86%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.42, #E3E3E3),
+		color-stop(0.71, #F0F0F0),
+		color-stop(0.86, #FAF7FA)
+	);
+
+	
+}
+blockquote p {
+	margin-top: 5px;
+	margin-bottom:5px;
+	line-height: 1.3;
+	letter-spacing: 0;
+}
+
+
 #forkme{
 	height: 149px;
 	width: 149px;
