@@ -21,7 +21,8 @@ background-image: -webkit-gradient(
 
 
 body{
-	font-family: "freight-sans-pro";
+	font-family: "ff-dagny-web-pro";
+	font-weight: 200;
 	max-width: 800px;
 	margin: 0 auto;
 	background-color: #FFF;
