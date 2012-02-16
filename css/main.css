@@ -135,6 +135,7 @@ article h2{
 
 article aside{
 	font-family: "chunk";
+	font-weight: normal;
 	font-size: 28px;
 	border: 1px solid #CCC;
 	background-color: #E89343;
@@ -323,6 +324,7 @@ nav ul{
 nav ul li{
 	display: table-cell;
 	font-family: "chunk";
+	font-weight: normal;
 	padding: 15px 20px 10px 20px;
 	text-align: center;
 	width: 100px;
