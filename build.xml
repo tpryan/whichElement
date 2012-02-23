@@ -3,7 +3,7 @@
 	<property file="build.properties"/>
 	<record name="build.log" action="start" />
 	
-	<target name="build" depends="test.ant,copyfiles,notify" />
+	<target name="build" depends="test.ant,copyfiles,minifyJS,minifyCSS,notify" />
 	
 	<target name="clean">
 		<echo message="Cleaning Build Space"/>
@@ -21,6 +21,7 @@
 				<exclude name='build.properties'/>
 				<exclude name='build.xml'/>
 				<exclude name='build.log'/>
+				<exclude name='lib/**'/>
 				<exclude name='.project'/>
 				<exclude name='README'/>
 				<exclude name='templates/**'/>
@@ -49,9 +50,35 @@
 		  	${message}
 		  </message>
 		</mail>
-		
-		
 	</target>
-	
+
+	<target name="minifyJS">
+		<echo message="Minifying JS Files" />
+
+		<java jar="lib/yuicompressor-2.4.7.jar" fork="true">
+			<arg value="${build.dir}/js/engine.js"/>
+			<arg value="-o"/>
+			<arg value="${build.dir}/js/engine.js"/>
+		</java>
+
+		<java jar="lib/yuicompressor-2.4.7.jar" fork="true">
+			<arg value="${build.dir}/js/main.js"/>
+			<arg value="-o"/>
+			<arg value="${build.dir}/js/main.js"/>
+		</java>
+
+	</target>
+
+	<target name="minifyCSS">
+		<echo message="Minifying CSS Files" />
+
+		<java jar="lib/yuicompressor-2.4.7.jar" fork="true">
+			<arg value="${build.dir}/css/main.css"/>
+			<arg value="-o"/>
+			<arg value="${build.dir}/css/main.css"/>
+		</java>
+
+
+	</target>
 	
 </project>	

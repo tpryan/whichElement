@@ -11,5 +11,5 @@ Currently we support the following domains:
 * 127.0.0.1
 * localhost
 
-To server up pages with proper webfonts setup your development environment to support one of those hosts, or request 
+To serve up pages with proper webfonts setup your development environment to support one of those hosts, or request 
 additional host support. 
