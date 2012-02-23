@@ -19,9 +19,13 @@ background-image: -webkit-gradient(
 	
 }
 
+.wf-loading {
+  visibility: hidden;
+ }
+
 
 body{
-	font-family: "ff-dagny-web-pro";
+	font-family: "Gill Sans", Calibri, "Trebuchet MS", sans-serif;
 	font-weight: 200;
 	max-width: 800px;
 	margin: 0 auto;
@@ -92,12 +96,15 @@ header h1, header h2{
 
 
 h1, h2, h3{
-	font-family: "chunk";
-	font-weight: normal;
+	font-family: "chunk", Garamond, "Hoefler Text", "Times New Roman", Times, serif;
+	font-weight: bold;
 	color: #E89343;
 	text-shadow: #aaa 1px 1px 1px;
 }
 
+.wf-active h1, .wf-active h2, .wf-active h3{
+   font-weight: normal;
+ }
 
 header, footer{
 	background-color: #382C2C;
@@ -134,8 +141,8 @@ article h2{
 
 
 article aside{
-	font-family: "chunk";
-	font-weight: normal;
+	font-family: "chunk", Garamond, "Hoefler Text", "Times New Roman", Times, serif;
+	font-weight: bold;
 	font-size: 28px;
 	border: 1px solid #CCC;
 	background-color: #E89343;
@@ -170,6 +177,12 @@ article aside{
 	box-shadow: 5px 5px 5px #888;
 	
 }
+
+
+
+.wf-active article aside{
+   font-weight: normal;
+ }
 
 blockquote{
 
@@ -356,13 +369,17 @@ nav ul{
 
 nav ul li{
 	display: table-cell;
-	font-family: "chunk";
-	font-weight: normal;
+	font-family: "chunk", Garamond, "Hoefler Text", "Times New Roman", Times, serif;
+	font-weight: bold;
 	padding: 15px 20px 10px 20px;
 	text-align: center;
 	width: 100px;
 	text-shadow: #382c2c 1px 1px 3px;
 }
+
+.wf-active nav ul li{
+   font-weight: normal;
+ }
 
 nav  a:link{ color: #FFFFFF; border: none;}
 nav  a:visited{ color: #FFFFFF; border: none;}
