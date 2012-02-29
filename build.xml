@@ -77,8 +77,6 @@
 			<arg value="-o"/>
 			<arg value="${build.dir}/css/main.css"/>
 		</java>
-
-
 	</target>
 	
 </project>	
