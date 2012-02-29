@@ -3,7 +3,7 @@
 	<property file="build.properties"/>
 	<record name="build.log" action="start" />
 	
-	<target name="build" depends="test.ant,copyfiles,minifyJS,minifyCSS,notify" />
+	<target name="build" depends="test.ant,copyfiles,minifyJS,minifyCSS" />
 	
 	<target name="clean">
 		<echo message="Cleaning Build Space"/>
