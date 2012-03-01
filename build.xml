@@ -22,6 +22,7 @@
 				<exclude name='build.xml'/>
 				<exclude name='build.log'/>
 				<exclude name='lib/**'/>
+				<exclude name='search/indexer.js'/>
 				<exclude name='.project'/>
 				<exclude name='README'/>
 				<exclude name='templates/**'/>
