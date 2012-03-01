@@ -1,5 +1,7 @@
 $(document).ready(function() {
-	var filter = window.location.href.indexOf("/elements/") + window.location.href.indexOf("/concepts/") + window.location.href.indexOf("/definitions/")
+	var filter = window.location.href.indexOf("/elements/") + 
+				 window.location.href.indexOf("/concepts/") + 
+				 window.location.href.indexOf("/definitions/")
 	if(filter < 0 ){
 		resizeFooter();
 	} 
