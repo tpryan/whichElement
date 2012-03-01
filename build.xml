@@ -15,7 +15,7 @@
 	<target name="copyfiles">
 		<echo message="Copying Files to Build Location"/>
 		<copy todir="${build.dir}" preservelastmodified="true" verbose="true" >
-			<fileset dir="${stage.dir}">
+			<fileset dir="${basedir}/">
 				<exclude name='.gitignore'/>
 				<exclude name='.git/**'/>
 				<exclude name='build.properties'/>
@@ -78,5 +78,15 @@
 			<arg value="${build.dir}/css/main.css"/>
 		</java>
 	</target>
+
+	<target name="testRhino" description="test">
+
+	    <java jar="lib/js.jar" fork="true">
+			<arg value="${basedir}/search/indexer.js"/>
+		</java>
+
+	</target>
+
+
 	
 </project>	
