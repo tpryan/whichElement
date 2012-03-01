@@ -1,0 +1,39 @@
+<header>
+	<h1>Address</h1>
+	<p>A postal address, where someone would deliver mail.</p>
+</header>
+
+
+<figure class="example" >
+	<img src="/concepts/articles/address/address_example.jpg" width="299" height="227" alt="An example address" />
+	<figcaption>An example address, as if you had no idea what <q>postal address</q> meant.</figcaption>
+</figure>
+
+<h2>Overview</h2>
+
+<p>It's seems straight-forward, there is an element named <code>&lt;address&gt;</code>.  Case closed right?
+It's not so simple, the spec has something to say. </p>
+
+
+
+<h2>Candidates</h2>
+<ul>
+	<li><a href="/elements/address"><code>&lt;address&gt;</code></a></li>
+	<li>A collection of <a href="/elements/div"><code>&lt;div&gt;</code></a> and <a href="/elements/span"><code>&lt;span&gt;</code></a> elements.</li>
+</ul>
+
+<p>At first glance it would seem <code>&lt;address&gt;</code> would be the right choice, it's called <em>address</em> for goodness' sake.  But alas, as per the specification, address in the context of an <abbr>HTML5</abbr> element <code>&lt;address&gt;</code> means <q>To whom should I <strong>address</strong/> my issue with this piece of content.</q> So in this case it is referring to the authors of the article or the maintainer of the page.  If in that context, a postal address makes sense then you can use it, otherwise postal addresses should be otherwise marked up.</p>
+	
+	
+<h2>Verdict</h2>
+<p>We reccomend a collection of <a href="/elements/div"><code>&lt;div&gt;</code></a> and <a href="/elements/span"><code>&lt;span&gt;</code></a> elements because the spec clearly states <code>&lt;address&gt;</code> is not the correct element ot use.
+</p>	
+
+<h2>Further Reading</h2>
+<ul class="optionlist">
+	<li><a href="http://html5doctor.com/the-address-element/">HTML5 Doctor -> The Address Element</a></li>
+	<li><a href="http://dev.w3.org/html5/spec/the-address-element.html#the-address-element">w3c -> The address element</a></li>
+</ul>
+
+
+	
