@@ -143,6 +143,11 @@ strong {
 	font-weight: bold;
 }
 
+dd{
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
 article aside{
 	font-family: "chunk", Garamond, "Hoefler Text", "Times New Roman", Times, serif;
 	font-weight: bold;
@@ -423,6 +428,24 @@ nav  li:last-child{text-align: right;}
 	padding: 0 20px;
 }
 
+#searchpage input[type=search] {
+   -moz-appearance:none;
+   -webkit-appearance:none;
+}
+
+
+
+#searchpage #q{
+	font-size: 30px;
+}
+
+#searchpage input#submit{
+	font-size: 30px;
+	border: 1px solid #CCCCCC;
+	border-radius: 10px;
+}
+
+
 
 @media (min-width:640px) {
 	h1{
@@ -436,7 +459,7 @@ nav  li:last-child{text-align: right;}
 	 h3{
 		font-size: 20px;
 	}
-	p, li{
+	p, li, dd, dt{
 		font-size: 20px;
 	}
 }
