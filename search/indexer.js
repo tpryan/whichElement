@@ -1,24 +1,59 @@
 
 importPackage(java.io);
 
-var startPath=new File('./');
-var fileList = listDirectory(startPath.getCanonicalPath());
-fileList = filterDirectoryList(fileList, true, "html");
-displayDirectoryList(fileList);
-
-// TODO: Codeout pseudo code.
-// Read in all file contents
-	//loop through files
-		//read file contents
-		//extract title
-		//extract excerpts
-		//calculate url
-		//write to json string
-		//concat to json file
+var rootPath = arguments[0];
+var startPath=new File(rootPath);
+var fileList = directoryList(startPath.getCanonicalPath());
+var fileList = filterDirectoryList(fileList, true, "html");
+var searchIndex = indexFiles(fileList, rootPath);
 
 
+serializeToDisk(searchIndex, "./search/searchindex.js");
+serializeToDisk(searchIndex, rootPath + "/search/searchindex.js");
 
-function listDirectory(startPath){
+function indexFiles(fileList, rootPath){
+	var searchIndex = [];
+	for (var i = 1; i < fileList.length; i++){
+		var fileToRead = fileList[i]['path'];
+		
+		var contentFilter = fileToRead.indexOf("/articles/") + fileToRead.indexOf("/tags/");
+		var badFilter = fileToRead.indexOf("/bad/")
+		if (contentFilter > 0 && badFilter < 1){
+			var resultSet = indexContentPage(fileToRead, rootPath);
+			searchIndex.push(resultSet);
+			
+		}	
+	}
+	return searchIndex;
+}
+
+function serializeToDisk(content, location){
+	var fstream = new FileWriter(location);
+	var out = new BufferedWriter(fstream);
+	out.write(JSON.stringify(content));
+	out.close();
+}
+
+function indexContentPage(filePath, rootPath){
+	var fileContents = readFile(filePath);
+	var resultSet = {};
+	resultSet['url'] = String(createURLPath(filePath, rootPath));
+	resultSet['title'] = String(grabBettwenTags(fileContents, "h1"));
+	return resultSet;
+}
+
+function createURLPath(filePath, rootPath){
+	return filePath.replace(rootPath, "");
+}
+
+function grabBettwenTags(html, tag){
+	var tag = typeof tag !== 'undefined' ? tag : "p";
+	var start = html.indexOf("<" + tag, html)  + tag.length + 2;
+	var end = html.indexOf("</" + tag, start );
+	return html.slice(start, end);
+}
+
+function directoryList(startPath){
 	var fileObject=new File(startPath);
 	var list = fileObject.list();
 	var results = []; 
@@ -27,11 +62,11 @@ function listDirectory(startPath){
 	    var child = new File(startPath + "/" + list[i]);
 
 	    if (child.isDirectory()){
-	    	var recurseDirectoryListing = listDirectory(child.getCanonicalPath());
+	    	var recurseDirectoryListing = directoryList(child.getCanonicalPath());
 	    	results = results.concat(recurseDirectoryListing);
 	    }
 	    else{
-	    	var fileArray = [];
+	    	var fileArray = {};
 	    	fileArray['path'] = child.getCanonicalPath();
 	    	fileArray['name'] = child.getName();
 	    	fileArray['parent'] = child.getParent();
@@ -53,8 +88,8 @@ function listDirectory(startPath){
 
 function filterDirectoryList(directoryList, filesOnly, extension){
 
-	filesOnly = typeof filesOnly !== 'undefined' ? filesOnly : false;
-  	extension = typeof extension !== 'undefined' ? extension : '';
+	var filesOnly = typeof filesOnly !== 'undefined' ? filesOnly : false;
+  	var extension = typeof extension !== 'undefined' ? extension : '';
 
 	var results = []; 
 

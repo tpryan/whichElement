@@ -84,6 +84,7 @@
 
 	    <java jar="lib/js.jar" fork="true">
 			<arg value="${basedir}/search/indexer.js"/>
+			<arg value="${build.dir}"/>
 		</java>
 
 	</target>
