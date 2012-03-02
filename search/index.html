@@ -11,6 +11,110 @@
 		<script type="text/javascript" src="http://use.typekit.com/div2vlq.js"></script>
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 		<script type="text/javascript" src="/js/main.js"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+				var vars = getURLVars();
+
+				if (vars['q'] != null &&  vars['q'].length > 0){
+					$.get('searchindex.js', function(data) {
+						handleSearchIndexRetreval(data, vars['q']);
+					});
+				}
+
+				$('#searchForm').submit(function(e){
+						var searchTerm = $('#q').val();
+						console.log(searchTerm);
+						$.get('searchindex.js', function(data) {
+							handleSearchIndexRetreval(data, searchTerm);
+						});
+						return false;
+					}
+				);
+
+
+
+			})
+
+
+
+
+			function handleSearchIndexRetreval(data, searchTerm){
+				var searchIndex = JSON.parse(data);
+				var hits = searchForTerm(searchTerm, searchIndex)
+				var results = createSearchResultHTML(hits, searchTerm);
+				$('#resultblock').html(results);
+			}
+
+
+			function searchForTerm(searchTerm, searchIndex){
+				var hits = [];
+
+				for (var i = 0; i < searchIndex.length; i++){
+					var filter = searchIndex[i]['title'].toLowerCase().indexOf(searchTerm.toLowerCase());
+					filter += searchIndex[i]['summary'].toLowerCase().indexOf(searchTerm.toLowerCase());
+
+					if (filter >= 0){
+						hits.push(searchIndex[i]);
+					}
+				}
+
+				return hits;
+			}
+
+			function createSearchResultHTML(hits, searchTerm){
+				if (hits.length > 0){
+					
+					var resultWord = "results";
+					
+					if (hits.length == 1){
+						resultWord = "result";
+					}
+
+
+						var results = "<h3>Results</h3>";
+						results += "<p>Search yielded " + hits.length + " " + resultWord + " for <mark>" + searchTerm + "</mark>.</p>";
+						results += "<dl>";
+						for (var i = 0; i < hits.length; i++){
+							var summary = hits[i]['summary'].replace(searchTerm, "<mark>" + searchTerm + "</mark>")
+							var result = "<dt>" + (i+1)  + ". ";
+							result += '<a href="' + hits[i]['url'] + '">' + hits[i]['title'] + '</a>';
+							result += "</dt>"
+							result += "<dd>";
+							result += summary;
+							result += "</dd>"
+							results += result;
+						}
+
+						results += "<dl>";
+						
+					}
+					else{
+						var results = "<h3>No results</h3>";
+						results += "<p>We never thought to write about <mark>" + searchTerm + "</mark> before. Hopefully we will soon.</p>";
+					}
+				return results;
+			}
+
+			function getURLVars(){
+				var vars = [], hash;
+			    var q = document.URL.split('?')[1];
+			    if(q != undefined){
+			        q = q.split('&');
+			        for(var i = 0; i < q.length; i++){
+			            hash = q[i].split('=');
+			            vars.push(hash[1]);
+			            vars[hash[0]] = hash[1];
+			        }
+				}
+				return vars;
+			}
+
+		</script>
+
+
+
 	</head> 
 	<body> 
 		<header>
@@ -34,11 +138,14 @@
 			</div>
 			<article>
 			<h2>Search</h2>
-				<form >
-					<input type="search" name="q" id="search" placeholder="Search" />
-					<input type="submit" name="submit" value="Go!" />
-				</form>	
+				<form id="searchForm" >
+					<input type="search" name="q" id="q" placeholder="Search" />
+					<input type="submit" name="submit" id="submit" value="Go!" />
+				</form>
 
+			<div id="resultblock">
+				<p>Go ahead and search.  If we got it, we'll let you know.</p>
+			</div>
 
 			</article>
 		</div>

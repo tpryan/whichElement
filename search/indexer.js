@@ -39,11 +39,17 @@ function indexContentPage(filePath, rootPath){
 	var resultSet = {};
 	resultSet['url'] = String(createURLPath(filePath, rootPath));
 	resultSet['title'] = String(grabBettwenTags(fileContents, "h1"));
+	resultSet['summary'] = String(grabBettwenTags(fileContents, "p"));
 	return resultSet;
 }
 
 function createURLPath(filePath, rootPath){
-	return filePath.replace(rootPath, "");
+	var base = filePath.replace(rootPath, "");
+	base = base.replace("index.html", "");
+	base = base.replace("/tags/", "/");
+	base = base.replace("/articles/", "/");
+
+	return base;
 }
 
 function grabBettwenTags(html, tag){
