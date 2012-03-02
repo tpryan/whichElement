@@ -3,7 +3,7 @@
 	<property file="build.properties"/>
 	<record name="build.log" action="start" />
 	
-	<target name="build" depends="test.ant,copyfiles,minifyJS,minifyCSS" />
+	<target name="build" depends="test.ant,copyfiles,minifyJS,minifyCSS,createSearchIndex" />
 	
 	<target name="clean">
 		<echo message="Cleaning Build Space"/>
@@ -80,7 +80,7 @@
 		</java>
 	</target>
 
-	<target name="testRhino" description="test">
+	<target name="createSearchIndex" description="test">
 
 	    <java jar="lib/js.jar" fork="true">
 			<arg value="${basedir}/search/indexer.js"/>
