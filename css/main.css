@@ -383,25 +383,29 @@ abbr{
 	font-variant: small-caps;
 }
 
+nav{
+	border-top: 3px solid #E89343;
+	border-bottom: 3px solid #E89343;
+	background-color: #887777;
+}
+
 nav ul{
 	margin: 0;
 	padding: 0;
 	list-style: none;
-	border-top: 3px solid #E89343;
-	border-bottom: 3px solid #E89343;
-	background-color: #887777;
+	
 	display: table;
 	width: 100%;
 
 }
 
 nav ul li{
+	color: #bbbbbb;
 	display: table-cell;
 	font-family: "chunk", Garamond, "Hoefler Text", "Times New Roman", Times, serif;
 	font-weight: bold;
 	padding: 15px 20px 10px 20px;
-	text-align: center;
-	width: 100px;
+	text-align: left;
 	text-shadow: #382c2c 1px 1px 3px;
 }
 
@@ -414,7 +418,6 @@ nav  a:visited{ color: #FFFFFF; border: none;}
 nav  a:hover{ color: #E89343; border: none;}
 nav  a:active{ color: #E89343; border: none;}
 
-nav  li:first-child{text-align: left;}
 nav  li:last-child{text-align: right;}
 
 
@@ -428,23 +431,33 @@ nav  li:last-child{text-align: right;}
 	padding: 0 20px;
 }
 
-#searchpage input[type=search] {
+input[type=search] {
    -moz-appearance:none;
    -webkit-appearance:none;
 }
 
-
-
-#searchpage #q{
-	font-size: 30px;
+#q{
+	font-size: 18px;
 }
 
-#searchpage input#submit{
-	font-size: 30px;
+input#submit{
+	font-size: 13px;
 	border: 1px solid #CCCCCC;
 	border-radius: 10px;
 }
 
+
+#searchForm #q{
+	font-size: 30px;
+}
+
+#searchForm input#submit{
+	font-size: 30px;
+}
+
+#search nav form{
+	visibility: hidden;
+}
 
 
 @media (min-width:640px) {

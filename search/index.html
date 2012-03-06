@@ -13,6 +13,8 @@
 		<script type="text/javascript" src="/js/main.js"></script>
 
 		<script type="text/javascript">
+			var searchIndex = "";
+
 			$(document).ready(function() {
 
 				var vars = getURLVars();
@@ -26,9 +28,17 @@
 				$('#searchForm').submit(function(e){
 						var searchTerm = $('#q').val();
 						console.log(searchTerm);
-						$.get('searchindex.js', function(data) {
-							handleSearchIndexRetreval(data, searchTerm);
-						});
+
+						if (searchIndex.length < 1){
+							$.get('searchindex.js', function(data) {
+								handleSearchIndexRetreval(data, searchTerm);
+							});
+						}
+						else{
+							handleSearch(searchTerm);
+						}
+						
+						
 						return false;
 					}
 				);
@@ -37,14 +47,16 @@
 
 			})
 
-
-
-
-			function handleSearchIndexRetreval(data, searchTerm){
-				var searchIndex = JSON.parse(data);
+			function handleSearch(searchTerm){
 				var hits = searchForTerm(searchTerm, searchIndex)
 				var results = createSearchResultHTML(hits, searchTerm);
 				$('#resultblock').html(results);
+			}
+
+
+			function handleSearchIndexRetreval(data, searchTerm){
+				searchIndex = JSON.parse(data);
+				handleSearch(searchTerm);
 			}
 
 
@@ -116,7 +128,7 @@
 
 
 	</head> 
-	<body id="searchpage"> 
+	<body id="search"> 
 		<header>
 			<hgroup>
 				<h1><a href="/">whichElement?</a></h1>
@@ -129,6 +141,12 @@
 					<li><a href="/">Home</a></li>
 					<li><a href="/contribute">Contribute</a></li>
 					<li><a href="/about">About</a></li>
+					<li>
+						<form action="/search">
+							<input type="search" name="q" id="q" placeholder="Search" disabled />
+							<input type="submit" name="submit" id="submit" value="Go!" />
+						</form>
+					</li>
 				</ul>
 			</nav>
 		</header>
