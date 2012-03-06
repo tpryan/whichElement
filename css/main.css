@@ -437,13 +437,13 @@ input[type=search] {
 }
 
 #q{
-	font-size: 18px;
+	font-size: 12px;
 }
 
 input#submit{
-	font-size: 13px;
+	font-size: 8px;
 	border: 1px solid #CCCCCC;
-	border-radius: 10px;
+	border-radius: 5px;
 }
 
 
@@ -475,5 +475,48 @@ input#submit{
 	p, li, dd, dt{
 		font-size: 20px;
 	}
+
+	#q{
+	font-size: 18px;
 }
 
+	input#submit{
+		font-size: 13px;
+		border-radius: 10px;
+	}
+
+}
+
+
+@media (max-width:480px) {
+	h1{
+	font-size: 26px;
+	}
+	
+	h2{
+		font-size: 14px;
+	}
+	
+	 h3{
+		font-size: 16px;
+	}
+	p, li, dd, dt{
+		font-size: 16px;
+	}
+
+	#q{
+	font-size: 8px;
+}
+
+	input#submit{
+		font-size: 10px;
+		border-radius: 4px;
+	}
+
+	nav ul li{
+		display: block;
+		padding: 5px 5px 5px 20px;
+	}
+
+	nav  li:last-child{text-align: left;}
+}
