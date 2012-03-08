@@ -5,14 +5,14 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
 		<link rel="stylesheet" href="/css/main.css" />
-		<script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
-		<script type="text/javascript" src="/js/html5shiv.js"></script>
-        <script type="text/javascript" src="/js/engine.js"></script>
-		<script type="text/javascript" src="http://use.typekit.com/div2vlq.js"></script>
-		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-		<script type="text/javascript" src="/js/main.js"></script>
+		<script src="/js/jquery-1.7.1.min.js"></script>
+		<script src="/js/html5shiv.js"></script>
+        <script src="/js/engine.js"></script>
+		<script src="http://use.typekit.com/div2vlq.js"></script>
+		<script>try{Typekit.load();}catch(e){}</script>
+		<script src="/js/main.js"></script>
 
-		<script type="text/javascript">
+		<script>
 			var searchIndex = "";
 
 			$(document).ready(function() {
@@ -64,8 +64,20 @@
 				var hits = [];
 
 				for (var i = 0; i < searchIndex.length; i++){
-					var filter = searchIndex[i]['title'].toLowerCase().indexOf(searchTerm.toLowerCase());
-					filter += searchIndex[i]['summary'].toLowerCase().indexOf(searchTerm.toLowerCase());
+					var inTitle = searchIndex[i]['titleContents'].toLowerCase().indexOf(searchTerm.toLowerCase());
+					var inSummary = searchIndex[i]['summary'].toLowerCase().indexOf(searchTerm.toLowerCase());
+					var inContents = searchIndex[i]['rawContents'].toLowerCase().indexOf(searchTerm.toLowerCase());
+					var filter = inTitle + inSummary + inContents;
+
+
+
+
+					if (inSummary + inTitle  < 1 && inContents > 0){
+						searchIndex[i]['inContents'] = true;
+					}
+					else{
+						searchIndex[i]['inContents'] = false;
+					}
 
 					if (filter >= 0){
 						hits.push(searchIndex[i]);
@@ -86,16 +98,54 @@
 
 
 						var results = "<h3>Results</h3>";
-						results += "<p>Search yielded " + hits.length + " " + resultWord + " for <mark>" + searchTerm + "</mark>.</p>";
+						results += "<p>Search yielded " + hits.length + " " + resultWord + " for <strong>" + searchTerm + "</strong>.</p>";
 						results += "<dl>";
 						for (var i = 0; i < hits.length; i++){
-							var summary = hits[i]['summary'].replace(searchTerm, "<mark>" + searchTerm + "</mark>")
-							var result = "<dt>" + (i+1)  + ". ";
-							result += '<a href="' + hits[i]['url'] + '">' + hits[i]['title'] + '</a>';
+							var summary = "";
+							var contentSummary = "";
+
+							summary = hits[i]['summary'].replace(searchTerm, "<mark>" + searchTerm + "</mark>");
+							
+							
+							if (hits[i]['inContents']){
+								
+								var searchTermStart = hits[i]['rawContents'].indexOf(searchTerm) - 40;
+								var searchTermEnd = hits[i]['rawContents'].indexOf(searchTerm) + 40 + searchTerm.length;
+								var contentSeed = 	hits[i]['rawContents'].slice(searchTermStart, searchTermEnd);
+
+								contentSummary = contentSeed.replace(searchTerm, "<mark>" + searchTerm + "</mark>");
+							}
+
+							var markedTitle = hits[i]['title'].replace(searchTerm, "<mark>" + searchTerm + "</mark>");
+
+							var result = '<dt>' + (i+1)  + ". ";
+							result += '<a href="' + hits[i]['url'] + '">' + markedTitle + '</a>';
+							
 							result += "</dt>"
-							result += "<dd>";
-							result += summary;
-							result += "</dd>"
+							
+							if (hits[i]['inContents']){
+								result += '<dd><strong>Summary:</strong> ';
+								result += summary;
+								result += "</dd>"
+								result += '<dd class = "searchResult">';
+								result += '<div class= "searchContent">';
+								result += contentSummary;
+								result += '</div>';
+								result += '<div class="mask"></div>';
+								result += "</dd>"
+
+								
+
+							}
+							else{
+								result += '<dd><strong>Summary:</strong> ';
+								result += summary;
+								result += "</dd>"
+							}
+
+
+							
+							
 							results += result;
 						}
 

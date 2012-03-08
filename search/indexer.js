@@ -2,13 +2,13 @@
 importPackage(java.io);
 
 var rootPath = arguments[0];
-var startPath=new File(rootPath);
+var startPath= new File(rootPath);
 var fileList = directoryList(startPath.getCanonicalPath());
 var fileList = filterDirectoryList(fileList, true, "html");
 var searchIndex = indexFiles(fileList, rootPath);
 
 
-serializeToDisk(searchIndex, "./search/searchindex.js");
+serializeToDisk(searchIndex, "./search/searchindex.js", true);
 serializeToDisk(searchIndex, rootPath + "/search/searchindex.js");
 
 function indexFiles(fileList, rootPath){
@@ -27,10 +27,18 @@ function indexFiles(fileList, rootPath){
 	return searchIndex;
 }
 
-function serializeToDisk(content, location){
+function serializeToDisk(content, location, prettyify){
+	var prettyify = typeof prettyify !== 'undefined' ? prettyify : false;
 	var fstream = new FileWriter(location);
 	var out = new BufferedWriter(fstream);
-	out.write(JSON.stringify(content));
+	if (prettyify){
+		out.write(JSON.stringify(content, null, 3));
+	}
+	else{
+		out.write(JSON.stringify(content));
+	}
+	
+	
 	out.close();
 }
 
@@ -39,6 +47,8 @@ function indexContentPage(filePath, rootPath){
 	var resultSet = {};
 	resultSet['url'] = String(createURLPath(filePath, rootPath));
 	resultSet['title'] = String(grabBettwenTags(fileContents, "h1"));
+	resultSet['titleContents'] = resultSet['title'].replace(/<(?:.|\n)*?>/gm, '');
+	resultSet['rawContents'] = String(fileContents).replace(/<(?:.|\n)*?>/gm, '');
 	resultSet['summary'] = String(grabBettwenTags(fileContents, "p"));
 	return resultSet;
 }
