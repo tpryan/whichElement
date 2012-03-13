@@ -1,0 +1,55 @@
+<header>
+	<h1>F.A.Q.'s</h1>
+	<p>Frequently Asked Questions</p>
+</header>
+
+<h2>Overview</h2>
+<p>At it's heart it is a list of questions followed up by answers.  
+	The <q>frequently asked</q> part is often the result of creative license. But basically it is a common convention
+for either dealing with truly frequently asked questions, or an avenue for an elevator pitch for either the site or a 
+part of that site.</p>
+
+<h2>Candidates</h2>
+<!-- A list of elements that might be the right fit. -->
+<ul>
+	<li>A <a href="/elements/dl"><code>&lt;dl&gt;</code></a></li>
+	<li>A <a href="/elements/details"><code>&lt;details&gt;</code></a> and <a href="/elements/summary"><code>&lt;summary&gt;</code></a></li>
+	<li>A <a href="/elements/ul"><code>&lt;ul&gt;</code></a></li>
+	<li>A <a href="/elements/ol"><code>&lt;ol&gt;</code></a></li>
+
+	<li>A heading element and content</a></li>
+</ul>
+
+<p>Wow, that's a monster list of candidates.  </p>
+<p>Let's get this out in the open first. Everyone and their mother uses <code>&lt;dl&gt;</code> for <abbr>F.A.Q.</abbr>'s.  
+	It's just how it's done. Every public answer to this question will point you to using a <code>&lt;dl&gt;</code>.  We certainly
+	won't argue that isn't true. Some people have argued against the sematics of a <q>definition list</q> not fitting this usage. 
+That might be true a purely litteral view, but I think the spec does allow this, and the <abbr>W3C</abbr> specifically calls out 
+other misusages of the element it the spec.</p> 
+
+<p>So, is there any reason to discuss the rest?  Sure.  I think that <code>&lt;dl&gt;</code> is the best choice in general, but 
+	there are some cases where you might want to go with a different answer.</p>
+<p>The other list tags can be useful, and might be appropriate in some cases.  The big stumbling block there is that for both the 
+ 	<code>&lt;ul&gt;</code> and <code>&lt;ol&gt;</code> each node in a <code>&lt;li&gt;</code> is one stand alone piece of content. 
+ 	If you want to mark up a question and an answer, you have to have include multiples of <code>&lt;div&gt;</code>, <code>&lt;span&gt;</code> or <code>&lt;p&gt;</code> in some sort of awkward combo.</p>
+ <p>A <code>&lt;dl&gt;</code> can be great for short answers to many short questions. However, when you have long answers or few questions, a heading with content below it might work better for you. </p> 	 
+<p>The elements <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> are new in <abbr>HTML5</abbr>.  
+	They instruct the browser to hide the main content in the <code>&lt;details&gt;</code> element, and display the content in 
+	<code>&lt;summary&gt;</code> as a clickable toggle to show the content in the <code>&lt;details&gt;</code> element. It's pretty
+	cool and baked right into the browser. However as of this time, it's only available on Chrome. </p>
+	
+<h2>Verdict</h2>
+<p>Please be like every other website author on the planet and for the love of goodness use a <code>&lt;dl&gt;</code>. Okay, 
+you got really long winded answers, go with a heading and content.</p>
+
+<h2>Further Reading</h2>
+<ul class="optionlist">
+	<li><a href="http://forum.boagworld.com/discussion/2754/faq-markup">Boagworld Forum -> FAQ markup</a></li>
+	<li><a href="http://stackoverflow.com/questions/513888/semantic-html-markup-for-faqs">StackOverflow -> Semantic HTML markup for FAQs</a></li>
+	<li><a href="http://html5doctor.com/the-details-and-summary-elements/">HTML5 Doctor -> The details and summary elements</a></li>
+	<li><a href="http://dev.w3.org/html5/spec/Overview.html#the-dl-element">W3C -> The dl element</a></li>
+
+</ul>
+
+
+	
