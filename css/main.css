@@ -383,6 +383,11 @@ figure.example figcaption{
 	);
 }
 
+.optionlist li small{
+	float: right;
+	padding-right: 5px;
+}
+
 abbr{
 	cursor: help;
 	letter-spacing: 2px;
