@@ -6,3 +6,4 @@ RewriteRule ^(.*)$	/concepts/articles/$1.html [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ engine.html [QSA,L]
+DirectoryIndex index.html indexTemplate.html
