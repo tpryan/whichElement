@@ -1,0 +1,117 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+		<title>whichElement</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<link rel="stylesheet" href="/css/main.css" />
+		<script src="/js/main.js"></script>
+		<script src="http://use.typekit.com/div2vlq.js"></script>
+		<script>try{Typekit.load();}catch(e){}</script>
+	</head> 
+	<body id="home"> 
+		<header>
+			<hgroup>
+				<h1><a href="/">whichElement?</a></h1>
+				<h2>Trying to answer that age old question:</h2>
+				<h2><em>Should that be a div, a span, or something else?</em></h2>
+			</hgroup>
+			<div id="forkme"><a href="http://github.com/tpryan/whichelement">Fork me on GitHub</a></div>
+			<nav>
+				<ul>
+					<li>Home</li>
+					<li><a href="/contribute">Contribute</a></li>
+					<li><a href="/about">About</a></li>
+					<li>
+						<form action="/search">
+							<input type="search" name="q" id="q" placeholder="Search" />
+							<input type="submit" value="Go!" />
+						</form>
+					</li>
+				</ul>
+
+				
+			</nav>	
+		</header>
+		<div id ="content">
+			<article>
+				<section id="introduction">
+					<p>One of the main challenges we see in building semantic content is picking what tag to use when. 
+						This site seeks to help with that.  Now, lest we seem all judgy and preachy let me get a few beliefs out there:
+					</p>
+					<ul>
+						<li>A perfectly semantic site does not exist. </li>
+						<li>Even if it did, someone would disagree with its semantics.</li>
+						<li>Therefore semantics for semantic's sake is pointless.</li> 
+					</ul>
+					<p>However, semantics are about more then just semantics for semantic's sake. Semantics can be about 
+					accessibility, <abbr>SEO</abbr>, or just good developer to developer communication of intent.  They can be used to 
+					created better hooks for <abbr>CSS</abbr> and <abbr>DOM</abbr> manipulation.</p>
+					<p>Therefore we approach this site with the following in mind:</p>		
+					<ul>	
+
+						<li>Sematics exist along a continuum, something can be more or less semantic</li>
+						<li>We encourage semantics, but not at the cost of reasonableless.</li>
+					</ul>
+					
+					<p>Our goal is to <strong>suggest</strong> things to help you make a good decision about what you should do to be semantic.  
+						We certainly don't think we have any authority to <strong>command</strong> you to do things to be absolutely semantic. </p>
+				</section>
+				<section id="articles">
+					<section id="concepts">
+						<h2><a href="/concepts/">Concepts</a></h2>
+						<p>In concepts we start from the content. What kind of information or interface are you looking to display? 
+							From there we start the discussion about which elements to use.</p>
+						
+						<h3>Latest Concept Articles</h3>
+						<ul class="optionlist" id="conceptlist">
+							<li><a href="/concepts/comments/">Comments <small>March 14, 2012</small></a></li>
+     						<li><a href="/concepts/faq/">F.A.Q.'s <small>March 13, 2012</small></a></li>
+     						<li><a href="/concepts/address/">Address <small>March 1, 2012</small></a></li>
+     						<li><a href="/concepts/title/">Title <small>February 15, 2012</small></a></li>
+     						<li><a href="/concepts/comment/">Comment <small>February 8, 2012</small></a></li>
+     						<li><a href="/concepts/calendar/">Calendar <small>February 8, 2012</small></a></li>
+							
+						</ul>
+
+						<p><a href="/concepts/">List of all Concept articles</a></p>
+					</section>
+					<section id="elements">
+						<h2><a href="/elements/">Elements</a></h2>
+						<p>In elements we go the other direction, starting at the base elements.  From there we talk about 
+							how the element is used, and perhaps what mistakes are made with these elements.</p>
+						<h3>Latest Element Articles</h3>	
+						<ul class="optionlist" id="elementlist">
+							<li><a href="/elements/article/"><code>&lt;article&gt;</code></a></li>
+							<li><a href="/elements/code/"><code>&lt;code&gt;</code></a></li>
+							<li><a href="/elements/dd/"><code>&lt;dd&gt;</code></a></li>
+							<li><a href="/elements/details/"><code>&lt;details&gt;</code></a></li>
+							<li><a href="/elements/dl/"><code>&lt;dl&gt;</code></a></li>
+							
+						</ul>
+						<p><a href="/element/">List of all Element articles</a></p>
+					</section>
+				</section>	
+			</article>	
+		</div>
+		
+		<footer>
+			<p>
+                <a href="/">whichElement</a> is meant to be a group effort. 
+				Please <a href="/contribute">pitch in.</a>
+            </p>  
+		<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-28728908-1']);
+		  _gaq.push(['_trackPageview']);
+		
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		
+		</script>
+	</body>
+</html>
