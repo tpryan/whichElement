@@ -7,6 +7,8 @@ var startPath= new File(rootPath);
 var fileList = directoryList(startPath.getCanonicalPath());
 var fileList = filterDirectoryList(fileList, true, "html", "concepts/articles");
 
+fileList.sort(sortByPathAsc);
+
 var fileIndex = indexArticleFiles(fileList, rootPath);
 var conceptHTML = createListHTML(fileIndex, 5);
 var templateFile = rootPath + "/concepts/indexTemplate.html";

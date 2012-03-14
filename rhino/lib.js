@@ -164,3 +164,17 @@ function replaceHTMLInFile(inputFile, outputFile, contentToUpdate){
 
 	writeHTMLToDisk(newFileContents, outputFile);
 }
+
+
+
+function sortByPathAsc(a,b){
+	var pathA=a.path.toLowerCase();
+	var pathB=b.path.toLowerCase();
+	if (pathA < pathB){ 
+		return -1 
+	}
+	if (pathA > pathB){
+		return 1
+	}
+	return 0;
+}
