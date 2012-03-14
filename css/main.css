@@ -139,6 +139,12 @@ article h2{
 	font-size: 25px;
 }
 
+
+article h2 a:link{color: #E89343; 	border-bottom: none; }
+article h2 a:visited{color: #E89343; 	border-bottom: none; }
+article h2 a:hover{color: #887777; 	border-bottom: none; }
+article h2 a:active{color: #887777; 	border-bottom: none; }
+
 strong {
 	font-weight: bold;
 }
@@ -517,6 +523,27 @@ input#submit{
 	input#submit{
 		font-size: 13px;
 		border-radius: 10px;
+	}
+
+	#home article section{
+		display: table-cell;
+		padding: 0 10px 0px 10px;
+	}
+
+	#home article section section{
+		display: block;
+	}	
+
+	#home article section#introduction{
+		padding-left: 0;
+		border-right: 1px dotted #E89343;
+	}
+	#home article section#articles{
+		padding-right: 0;
+	}
+
+	#home article section section#concepts{
+		border-bottom: 1px dotted #E89343;
 	}
 
 }
