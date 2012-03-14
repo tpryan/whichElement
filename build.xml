@@ -20,6 +20,7 @@
 				<exclude name='.git/**'/>
 				<exclude name='rhino/**'/>
 				<exclude name='**/indexTemplate.html'/>
+				<exclude name='indexTemplate.html'/>
 				<exclude name='build.properties'/>
 				<exclude name='build.xml'/>
 				<exclude name='build.log'/>
@@ -86,6 +87,12 @@
 	</target>
 
 	<target name="createPageIndex" description="test">
+		<echo message="Create Main Index" />
+	    <java jar="lib/js.jar" fork="true">
+			<arg value="${basedir}/rhino/recentIndexer.js"/>
+			<arg value="${basedir}"/>
+		</java>
+
 		<echo message="Create Concept Index" />
 	    <java jar="lib/js.jar" fork="true">
 			<arg value="${basedir}/rhino/conceptIndexer.js"/>
@@ -98,6 +105,7 @@
 		</java>
 
 	</target>
+
 
 
 	

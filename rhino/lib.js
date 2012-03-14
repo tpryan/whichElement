@@ -17,8 +17,9 @@ function directoryList(startPath){
 	    	fileArray['path'] = child.getCanonicalPath();
 	    	fileArray['name'] = child.getName();
 	    	fileArray['parent'] = child.getParent();
-	    	fileArray['hidden'] = child.isHidden() ;
-	    	fileArray['dir'] = child.isDirectory() ;
+	    	fileArray['hidden'] = child.isHidden();
+	    	fileArray['dir'] = child.isDirectory();
+	    	fileArray['lastModified'] = child.lastModified();
 	    	var pos = fileArray['name'].lastIndexOf('.');
 	    	if (pos < 0){
 				fileArray['ext'] = '';
@@ -64,6 +65,8 @@ function filterDirectoryList(directoryList, filesOnly, extension, folderToTarget
 function displayDirectoryList(fileList){
 	for (var i=0; i<fileList.length; i++) {
 		print(fileList[i]['path'] ); 
+		print(fileList[i]['lastModified']);
+
 	}
 }
 
@@ -98,6 +101,7 @@ function indexContentPage(filePath, rootPath){
 	resultSet['titleContents'] = resultSet['title'].replace(/<(?:.|\n)*?>/gm, '');
 	resultSet['rawContents'] = String(fileContents).replace(/<(?:.|\n)*?>/gm, '');
 	resultSet['summary'] = String(grabBettwenTags(fileContents, "p"));
+	resultSet['lastModified'] = File(filePath).lastModified();
 	return resultSet;
 }
 
@@ -177,4 +181,52 @@ function sortByPathAsc(a,b){
 		return 1
 	}
 	return 0;
+}
+
+function sortByLastModifiedDesc(a,b){
+	var dateA=a.lastModified;
+	var dateB=b.lastModified;
+	if (dateA > dateB){ 
+		return -1 
+	}
+	if (dateA < dateB){
+		return 1
+	}
+	return 0;
+}
+
+function createUpdateListHTML(fileIndex, tabs, count){
+	var tabs = typeof tabs !== 'undefined' ? tabs : 0;
+	var count = typeof count !== 'undefined' ? count : fileIndex.length;
+	var tabsString = repeat('\t', tabs);
+
+	var result = "\n";
+	for (var i = 0; i < count; i++){
+		var item = "";
+		item += tabsString + '<li>';
+		item += '<a href="' + fileIndex[i]['url'] + '">';
+		item += fileIndex[i]['title'];
+		item += ' <small>';
+		item += formatFunctionDate(fileIndex[i]['lastModified']);
+		item += '</small></a>';
+		item += '</li>\n';
+		result += item;
+	}
+	return result;
+}
+
+function formatFunctionDate(date){
+	var jsDate = new Date(date);
+	var result = getDateString(jsDate.getMonth());
+	result += ' ';
+	result += jsDate.getDate();
+	result += ', ';
+	result += jsDate.getFullYear();
+
+	return result;
+}
+
+function getDateString(monthNumber){
+	var monthArray = ["January","February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+	return monthArray[monthNumber];
 }
