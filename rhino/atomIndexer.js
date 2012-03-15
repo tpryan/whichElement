@@ -67,7 +67,7 @@ function createAtomEntry(fileIndex, siteURL){
     content += '		<id>'+ makeAtomIDFromURL(fileIndex.url, siteURL, fileIndex.lastModified) +'</id>\n';
     content += '		<updated>' + formatDateForAtom(fileIndex.lastModified) + '</updated>\n';
     content += '		<summary>' + summary + '</summary>\n';
-    content += '		<content><![CDATA[' + fileIndex.contents + ']]></content>\n';
+    content += '		<content type="html"><![CDATA[' + fileIndex.contents + ']]></content>\n';
     content += '	</entry>\n';
 	return content;
 }
