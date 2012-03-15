@@ -93,7 +93,7 @@ function makeTwoChars(number){
 function makeAtomIDFromURL(localurl, siteURL, date){
 	var dateObj = new Date(date);
 	var result = "tag:" + siteURL.replace("http://", "");
-	result += "," + dateObj.getFullYear() + "-" + makeTwoChars(dateObj.getMonth() + 1) + "-" + dateObj.getDate();
+	result += "," + dateObj.getFullYear() + "-" + makeTwoChars(dateObj.getMonth() + 1) + "-" + makeTwoChars(dateObj.getDate());
 	result += ":" + localurl;
 	return result
 }
