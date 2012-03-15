@@ -38,7 +38,7 @@ function createAtomHeader(latestfileIndex, siteURL){
 	var content = "";
 	content += '<?xml version="1.0" encoding="utf-8"?>\n';
  
-	content += '<feed xmlns="http://www.w3.org/2005/Atom">\n';
+	content += '<feed xmlns="http://www.w3.org/2005/Atom" xml:base="' + siteURL + '/">\n';
  
     content += '    <title>whichElement</title>\n';
     content += '    <subtitle>Should that be a div, a span, or something else?</subtitle>\n';
@@ -67,7 +67,7 @@ function createAtomEntry(fileIndex, siteURL){
     content += '		<id>'+ makeAtomIDFromURL(fileIndex.url, siteURL, fileIndex.lastModified) +'</id>\n';
     content += '		<updated>' + formatDateForAtom(fileIndex.lastModified) + '</updated>\n';
     content += '		<summary>' + summary + '</summary>\n';
-    content += '		<content type="html"><![CDATA[' + fileIndex.contents + ']]></content>\n';
+    content += '		<content type="html" xml:base="' + siteURL + '/"><![CDATA[' + fileIndex.contents + ']]></content>\n';
     content += '	</entry>\n';
 	return content;
 }
