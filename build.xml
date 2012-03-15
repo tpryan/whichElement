@@ -4,7 +4,6 @@
 	<record name="build.log" action="start" />
 
 	<property name="prop.message" value="must be defined in build.properties. Use template.settings as a guide."/>
-    <fail message="stage.dir ${prop.message}" unless="stage.dir"/>
     <fail message="build.dir ${prop.message}" unless="build.dir"/>
     <fail message="site.url ${prop.message}" unless="site.url"/>
 	
@@ -42,7 +41,6 @@
 		<echo message="Testing ant in this environment. " />
 		<echo message="basedir:     ${basedir}" />
 		<echo message="ant.version: ${ant.version}" />
-		<echo message="stage.dir:   ${stage.dir}" />
 		<echo message="build.dir:   ${build.dir}" />
 	</target>
 	
