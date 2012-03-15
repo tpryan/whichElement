@@ -1,1 +1,3 @@
 DirectoryIndex index.html indexTemplate.html
+
+AddType application/atom+xml xml
