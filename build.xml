@@ -104,8 +104,14 @@
 			<arg value="${basedir}"/>
 		</java>
 
-	</target>
+		<echo message="Create Atom File" />
+	    <java jar="lib/js.jar" fork="true">
+			<arg value="${basedir}/rhino/atomIndexer.js"/>
+			<arg value="${basedir}"/>
+			<arg value="${site.url}"/>
+		</java>
 
+	</target>
 
 
 	
