@@ -7,8 +7,6 @@
     <fail message="stage.dir ${prop.message}" unless="stage.dir"/>
     <fail message="build.dir ${prop.message}" unless="build.dir"/>
     <fail message="site.url ${prop.message}" unless="site.url"/>
-
-
 	
 	<target name="build" depends="test.ant,createPageIndex,copyfiles,minifyJS,minifyCSS,createSearchIndex" />
 	
