@@ -96,12 +96,14 @@ function grabBettwenTags(html, tag){
 function indexContentPage(filePath, rootPath){
 	var fileContents = readFile(filePath);
 	var resultSet = {};
+	resultSet['filepath'] = String(filePath);
 	resultSet['url'] = String(createURLPath(filePath, rootPath));
 	resultSet['title'] = String(grabBettwenTags(fileContents, "h1"));
 	resultSet['titleContents'] = resultSet['title'].replace(/<(?:.|\n)*?>/gm, '');
 	resultSet['rawContents'] = String(fileContents).replace(/<(?:.|\n)*?>/gm, '');
 	resultSet['summary'] = String(grabBettwenTags(fileContents, "p"));
 	resultSet['lastModified'] = File(filePath).lastModified();
+	resultSet['contents'] = fileContents;
 	return resultSet;
 }
 

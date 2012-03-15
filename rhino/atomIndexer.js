@@ -67,19 +67,11 @@ function createAtomEntry(fileIndex, siteURL){
     content += '		<id>'+ makeAtomIDFromURL(fileIndex.url, siteURL, fileIndex.lastModified) +'</id>\n';
     content += '		<updated>' + formatDateForAtom(fileIndex.lastModified) + '</updated>\n';
     content += '		<summary>' + summary + '</summary>\n';
+    content += '		<content><![CDATA[' + fileIndex.contents + ']]></content>\n';
     content += '	</entry>\n';
 	return content;
 }
 
-function formatDateForAtom(date){
-	var dateObj = new Date(date);
-	
-	var result  = dateObj.getFullYear() + "-" + makeTwoChars(dateObj.getMonth() + 1) + "-" + makeTwoChars(dateObj.getDate());
-	result += "T";
-	result +=  makeTwoChars(dateObj.getHours()) + ":" + makeTwoChars(dateObj.getMinutes()) + ":" + makeTwoChars(dateObj.getSeconds());
-	result += "Z";
-	return result;
-}
 
 function makeTwoChars(number){
 	var numberString = String(number);
@@ -87,6 +79,16 @@ function makeTwoChars(number){
 		numberString = String("0") + numberString;
 	};
 	return numberString
+}
+
+function formatDateForAtom(date){
+	var dateObj = new Date(date);
+
+	var result  = dateObj.getFullYear() + "-" + makeTwoChars(dateObj.getMonth() + 1) + "-" + makeTwoChars(dateObj.getDate());
+	result += "T";
+	result +=  makeTwoChars(dateObj.getHours()) + ":" + makeTwoChars(dateObj.getMinutes()) + ":" + makeTwoChars(dateObj.getSeconds());
+	result += "Z";
+	return result;
 }
 
 // from http://web.archive.org/web/20110514113830/http://diveintomark.org/archives/2004/05/28/howto-atom-id
