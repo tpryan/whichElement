@@ -41,20 +41,6 @@
 		<echo message="build.dir:   ${build.dir}" />
 	</target>
 	
-	<target name="notify">
-		<loadfile property="message" srcfile="build.log" />
-
-		<mail mailhost="${mail.host}" 
-			subject="Update build" 
-			from="${mail.username}@${mail.host}" 
-			tolist="admins@${mail.host}" 
-			user="${mail.username}@${mail.host}" 
-			password="${mail.password}">
-		  <message>An update has been posted to whichElement.com
-		  	${message}
-		  </message>
-		</mail>
-	</target>
 
 	<target name="minifyJS">
 		<echo message="Minifying JS Files" />
