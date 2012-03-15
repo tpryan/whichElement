@@ -20,6 +20,13 @@ function indexFiles(fileList, rootPath){
 		var badFilter = fileToRead.indexOf("/bad/")
 		if (contentFilter > 0 && badFilter < 1){
 			var resultSet = indexContentPage(fileToRead, rootPath);
+			
+			//TODO: Go back and make this stuff optional in indexContentPage,
+			//Adding stuff in the indexer required me to kill it from search json. 
+			delete resultSet['filepath'];
+			delete resultSet['contents'];
+			resultSet['lastModified'] = new Date(resultSet['lastModified']);
+
 			searchIndex.push(resultSet);
 			
 		}	
