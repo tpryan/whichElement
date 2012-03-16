@@ -100,6 +100,13 @@
 			<arg value="${site.url}"/>
 		</java>
 
+		<echo message="Create Sitemap" />
+	    <java jar="lib/js.jar" fork="true">
+			<arg value="${basedir}/rhino/sitemapIndexer.js"/>
+			<arg value="${basedir}"/>
+			<arg value="${site.url}"/>
+		</java>
+
 	</target>
 
 

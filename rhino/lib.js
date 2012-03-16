@@ -232,3 +232,11 @@ function getDateString(monthNumber){
 	var monthArray = ["January","February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 	return monthArray[monthNumber];
 }
+
+function makeTwoChars(number){
+	var numberString = String(number);
+	if (numberString.length == 1){
+		numberString = String("0") + numberString;
+	};
+	return numberString
+}

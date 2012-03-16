@@ -73,13 +73,7 @@ function createAtomEntry(fileIndex, siteURL){
 }
 
 
-function makeTwoChars(number){
-	var numberString = String(number);
-	if (numberString.length == 1){
-		numberString = String("0") + numberString;
-	};
-	return numberString
-}
+
 
 function formatDateForAtom(date){
 	var dateObj = new Date(date);
