@@ -1,0 +1,55 @@
+<header>
+	<h1>Pull Quote</h1>
+	<p>A pull quote is a fluffed up copy of a bit of the content on the current page.  It's usually bigger and more visually 
+		distinctive then the rest of the body copy.</p>
+</header>
+
+<h2>Overview</h2>
+<p>A pull quote in most cases is used to emphasize a theme or point of a piece.  The idea is that by presenting 
+	this block quote, readers can determine more quickly if they want to read the piece. It's a stylistic addition 
+	to a page that emphasizes content without actually adding concrete content.  </p>
+
+<h2>Candidates</h2>
+<ul>
+	<li><a href="/elements/aside"><code>&lt;aside&gt;</code></a></li>
+	<li><a href="/elements/blockquote"><code>&lt;blockquote&gt;</code></a></li>
+	<li>Highlighted with CSS and HMTL5, no semantic reference.</li>
+</ul>
+
+<p>The first issue to clear is <q>Is this a <a href="/concepts/quote">quote</a> or a pull quote?</q> An easy rule of thumb here is 
+	<q>If you are repeating something that is on this exact page, it's pull quote.</q>  Since it is not a quote, 
+	<code>&lt;blockquote&gt;</code> is inappropriate.</p>
+</p>	
+<p>The <abbr>W3C</abbr> specifically points out in their definition of <code>&lt;aside&gt;</code> that is intended 
+for pull quotes:</p>
+
+<figure>
+<blockquote>The element can be used for typographical effects like <strong>pull quotes</strong> or sidebars, for advertising, for groups of nav elements, and for other content that is considered separate from the main content of the page.</blockquote>
+	<figcaption>Emphasis added</figcaption>
+</figure>
+<p>That should be an open and shut case. Shouldn't it?</p>
+<p>However Maykel Loomans makes a great case in his article 
+	<a href="http://miekd.com/articles/pull-quotes-with-html5-and-css/">Pull Quotes with HTML5 and CSS</a> that 
+	pull quotes are a display issue and not a content issue.  If you buy into it, it means adding extra markup, 
+	and repeating content just to show a pull quote is semantically wrong. He makes a compelling case for it, and 
+	has an awesome solution.  Just using HTML5 and CSS to style a pull quote.  The article is great reading.  	
+</p>	
+<h2>Verdict</h2>
+<p>The semantic nit picker in me loves to point to <strong>Highlighted with CSS and HTML5</strong>. It might be a little 
+	kludgy on the CSS side but
+	from a semantic and content point of view, it's very elegant.  
+	That being said, the <abbr>W3C</abbr> says you can use
+	<code>&lt;aside&gt;</code> which might be a bit more flexible in terms of stying. 
+</p>	
+
+<h2>Further Reading</h2>
+<!-- Please source your analysis.  -->
+<ul class="optionlist">
+	<li><a href="http://en.wikipedia.org/wiki/Pull_quote">Wikipedia -> Pull Quote</a></li>
+	<li><a href="http://www.smashingmagazine.com/2008/06/12/block-quotes-and-pull-quotes-examples-and-good-practices/">Smashing Magazine -> Block Quotes and Pull Quotes: Examples and Good Practices</a></li>
+	<li><a href="http://dev.w3.org/html5/spec/single-page.html#the-aside-element">W3C -> The aside element</a></li>
+	<li><a href="http://miekd.com/articles/pull-quotes-with-html5-and-css/">MAYKEL LOOMANS on design, the web and other stuff nerds like. -> Pull Quotes with HTML5 and CSS</a></li>
+</ul>
+
+
+	
