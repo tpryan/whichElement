@@ -1,0 +1,126 @@
+<header>
+	<h1>Quote</h1>
+	<p>Something that someone else said reproduced on your site.</p>
+</header>
+
+<h2>Overview</h2>
+<p>Quotes are something someone else said.  This separates them from <a href="/concepts/pullquote">Pull Quotes</a> which 
+are something you said, just fluffed up to look bigger.  That difference being established, there appear to be 2 main ways 
+of dealing with quotes:</p>
+<ol>
+	<li>Short Quotes</li>
+	<li>Long Quotes</li>
+</ol>
+<p>Short quotes are quotes that you refer to inside the rest of your copy.  They make up part of the 
+	paragraph, and don't interrupt it. They tend to be a sentence or less.</p>
+
+<p>Long quotes are quotes that you break the flow of your content to show.  Instead of just referring 
+to it, you are basically asking the reader to consider it with context.  They tend to be a paragraph or longer. </p>	
+
+
+
+<h2>Candidates</h2>
+<!-- A list of elements that might be the right fit. -->
+<ul>
+	<li>Not specified.</li>
+	<li><a href="/elements/aside"><code>&lt;aside&gt;</code></a></li>
+	<li><a href="/elements/div"><code>&lt;div&gt;</code></a></li>
+	<li><a href="/elements/p"><code>&lt;p&gt;</code></a></li>
+	<li><a href="/elements/blockquote"><code>&lt;blockquote&gt;</code></a></li>
+	<li><a href="/elements/q"><code>&lt;q&gt;</code></a></li>
+</ul>
+
+<h3>Short Quotes</h3>
+<p>My instincts tell me that most people don't markup inline short quotes. A short little test of some 
+well respected newspapers, bore this out. (I picked news as they are fastitdious about quoting. ) Most sites
+just use quotation marks. Probably due to a long historical lack of browser styling for this tag 
+in Internet Explorer. It was added in Internet Explorer 8. So <code>&lt;q&gt;</code></a> wins this easily. </p>
+
+<h3>Long Quotes</h3>
+<p>The <code>&lt;blockquote&gt;</code> element has a long history of being misued presentationally to indent content.
+Because of that the actual purpose may have taken a backseat for awhile. For the most part, this is showdown between
+not marking it up at all, and using the semantic tag.</p>
+<p>However the addition of the <code>&lt;aside&gt;</code> tag opens up the door for some confusion, as it is often used
+	for <a href="/concepts/pullquote">pull quotes</a>. Pull quotes and regular quotes sometimes get confused. So one might think 
+	to stick a long quote in an <code>&lt;aside&gt;</code>. Easy rule of thumb here, if you are highlighting something 
+	<em>someone else</em> said, use <code>&lt;blockquote&gt;</code>. </p>
+	
+<h2>Verdict</h2>
+
+
+
+<h3>Short Quotes</h3>
+<p>Use <code>&lt;q&gt;</code>.</p>
+<figure>
+<code>
+<pre class="prettyprint lang-html linenums">&lt;p&gt;An unnamed source close to the 
+Governor said &lt;q&gt;The Govenor has never 
+dressed up like a marsupial while fighting crime,&lt;/q&gt;
+when asked about the rumors of the identity of the 
+Wonderful Wallaby.&lt;/p&gt;</pre>   		
+</code>
+<figcaption>In code</figcaption>
+</figure>
+
+<figure>
+<p>An unnamed source close to the 
+Governor said <q>The Govenor has never 
+dressed up like a marsupial while fighting crime,</q>
+when asked about the rumors of the identity of the 
+Wonderful Wallaby.</p>
+<figcaption>In Browser</figcaption>
+</figure>
+
+
+<h3>Long Quotes</h3>
+<p>Use <code>&lt;blockquote&gt;</code>.</p>
+<figure>
+<code>
+<pre class="prettyprint lang-html linenums">&lt;p&gt;When asked about the identify of the Wonderful 
+Wallaby, the Governor's office released this 
+statement:&lt;/p&gt;
+&lt;blockquote&gt;The Governor is not dressed, and has 
+never dressed as a marsupial for the purposes of 
+fighting crime. If at any time the Governor 
+knowingly or unknowingly dressed as a marsupial, he 
+did so purely for recreational purposes, and has not 
+broken the law while doing so. Despite the fact that 
+this is the sort of tough-on-crime leadership, and 
+strange costumery that you have come to expect from 
+his office.
+&lt;/blockquote&gt;
+&lt;p&gt;The Press Secretary refused any further comments&lt;/p&gt;</pre>   		
+</code>
+<figcaption>In code</figcaption>
+</figure>
+
+<figure>
+<p>When asked about the identify of the Wonderful 
+Wallaby, the Governor's office released this 
+statement:</p>
+<blockquote>The Governor is not dressed, and has 
+never dressed as a marsupial for the purposes of 
+fighting crime. If at any time the Governor 
+knowingly or unknowingly dressed as a marsupial, he 
+did so purely for recreational purposes, and has not 
+broken the law while doing so. Despite the fact that 
+this is the sort of tough-on-crime leadership, and 
+strange costumery that you have come to expect from 
+his office.
+</blockquote>
+<p>The Press Secretary refused any further comments</p>
+<figcaption>In Browser</figcaption>
+</figure>	
+
+<h2>Further Reading</h2>
+<!-- Please source your analysis.  -->
+<ul class="optionlist">
+	<li><a href="http://msdn.microsoft.com/en-us/library/cc304133(v=vs.85).aspx">MSDN -> HTML Enhancements in Windows Internet Explorer 8</a></li>
+	<li><a href="http://www.alistapart.com/articles/qtag">A List Apart -> Long Live the Q Tag</a></li>
+	<li><a href="http://stackoverflow.com/questions/2205159/correct-use-of-blockquote-q-and-cite">Stackoverflow -> Correct use of Blockquote, q and cite?</a></li>
+	<li><a href="http://www.w3.org/TR/html5/grouping-content.html#the-blockquote-element">W3C -> The blockquote element</a></li>
+	<li><a href="http://www.smashingmagazine.com/2008/06/12/block-quotes-and-pull-quotes-examples-and-good-practices/">Smashing Magazine -> Block Quotes and Pull Quotes: Examples and Good Practices</a></li>
+</ul>
+
+
+	
