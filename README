@@ -1,6 +1,15 @@
 whichElement is an attempt to have a single resource to answer the question: "Which element should I use."
 
 We welcome community participation. Feel free to get in the game. Check out the contribute section of our site to see best how.
+http://whichelement.com/contribute/
+
+DEVELOPMENT NOTES 
+BUILD
+In order to build a copy of whichElement.com, you will need a version of ANT on your system. 
+Best way to get that: http://ant.apache.org/manual/install.html
+
+Building isn't necessary if you want just want to view content and what not. However if you want 
+to see any of the dynamically built pages, you do.
 
 WEBFONTS
 We use Typekit to deliver webfonts to the site.  Typekit fonts are ties to the domain of the hosting server.  
